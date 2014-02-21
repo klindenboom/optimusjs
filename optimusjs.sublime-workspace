@@ -1,0 +1,609 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"_",
+				"_openOffer"
+			],
+			[
+				"mitsubish",
+				"mitsubishi-white"
+			],
+			[
+				"exac",
+				"exactMatchData"
+			],
+			[
+				"vehic",
+				"vehicleCount"
+			],
+			[
+				"_on",
+				"_onTrimsResult"
+			],
+			[
+				"_onTrimsre",
+				"_onTrimsResultProxy"
+			],
+			[
+				"access",
+				"accessoryTable"
+			],
+			[
+				"lookupAcc",
+				"lookupAccessoryData"
+			],
+			[
+				"acc",
+				"accessories"
+			],
+			[
+				"option",
+				"optionBullets"
+			],
+			[
+				"add",
+				"addDependencies"
+			],
+			[
+				"mainConfig",
+				"mainConfigFile"
+			],
+			[
+				"fix",
+				"fixedPosition"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"model_pro",
+				"model_promo_stats_bkg"
+			],
+			[
+				"va",
+				"vertical-align"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tasks/require-prepare.js",
+			"settings":
+			{
+				"buffer_size": 7670,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "module.exports = function(grunt) {\n  grunt.initConfig({\n    pkg: grunt.file.readJSON('package.json'),\n	});\n\n  grunt.loadTasks();\n  \n};",
+			"file": "Gruntfile.js",
+			"file_size": 131,
+			"file_write_time": 1392937846000000,
+			"settings":
+			{
+				"buffer_size": 134,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/JSHint/JSHint.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Inst",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/astrout/Development/optimusjs/package.json",
+		"/Users/astrout/Development/petsmart-natgeo/www/js/global.js",
+		"/Users/astrout/Development/petsmart-natgeo/src/index.html",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/Gruntfile.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/global/global.js",
+		"/Users/astrout/Development/petsmart-natgeo/config.rb",
+		"/Users/astrout/Development/petsmart-natgeo/src/css/oldie/_ievars.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/modules/BuildNavigation.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/modules/BuildSummary.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/modules/BuildProcess.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/GlobalNavigation.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/vip/logged-in/modules/vip.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/utilities/button.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/call-center/modules/call-center.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/call-center/_offer-lead-raq.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/call-center/call-center.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/utilities/lookup.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/modules/BuildTrims.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/build/_build-controller.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global/fonts/_icons-font.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global/fonts/_icons.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global/fonts/_fonts.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global/header/_hotnav.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global/header/_topnav.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global/header/_subnav.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/hbs/inventory/inventory.hbs",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/vip/_form-validation-vip-login.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/vip/vip-login.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/hbs/build/buildoptions-list.hbs",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/modules/BuildOffers.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/erd/home.ftl",
+		"/usr/local/mitsubishi/devenv/TeamSiteContent/section/static-pages/erd.xml",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/landing/_mobile-accordion.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/landing/_gallery.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/owners/service/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/owners/service/landing/ServiceLanding.ftl",
+		"/usr/local/mitsubishi/devenv/TeamSiteContent/staticui/owners/service/service-landing.xml",
+		"/usr/local/mitsubishi/devenv/TeamSiteContent/staticui/owners/service/service-navigation.xml",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/hbs/build/buildoffers-list.hbs",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/mediatags/MediaTags.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/vehicles/2014/vlp.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/home/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/build/modules/_build-offers.scss",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/special-offers/special-offers.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/build/_build-offers.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/global/_rolemanager.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/hbs/specialoffers/specialoffers.hbs",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/contact-us-form/contact-us-form.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/contact-us-form/modules/ContactUsForm.ftl",
+		"/usr/local/mitsubishi/devenv/wlp/usr/servers/MitsubishiServer/dropins/war/MitsubishiCars/WEB-INF/classes/freemarker/owners/service/maintenance-schedule/modules/MaintenanceSchedule.ftl",
+		"/usr/local/mitsubishi/devenv/wlp/usr/servers/MitsubishiServer/dropins/war/MitsubishiCars/WEB-INF/classes/freemarker/owners/registration/modules/registration.ftl",
+		"/usr/local/mitsubishi/devenv/wlp/usr/servers/MitsubishiServer/dropins/war/MitsubishiCars/WEB-INF/classes/freemarker/owners/my-garage/modules/addVehicle.ftl",
+		"/usr/local/mitsubishi/devenv/wlp/usr/servers/MitsubishiServer/dropins/war/MitsubishiCars/WEB-INF/classes/freemarker/contact-us-form/modules/ContactUsForm.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/owners/my-garage/modules/addVehicle.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/contact-us-form/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/404/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/404/modules/Error404.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-a-brochure/modules/Request-a-brochure.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/analytics/s_code.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/owners/owners-login.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/navigation/OwnersDropdown.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/owners/modules/MemberLogin.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/Mitsubishicars.properties",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/global/_servicemanager.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/global/_servicedefinitions.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/GlobalContent.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/build/modules/BuildVehicles.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/GlobalFooter.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/analytics/tags.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/CTAFooter.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/CTA.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/navigation/VehicleDropdown.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/navigation/ShoppingToolsDropdown.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/utilities/common.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/navigation/PrimaryNavigation.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/OwnersFooter.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/utilities/setnavs.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/StickyFooter.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/server.xml",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/wlp_refresh.sh",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/home/modules/HomeAllModels.ftl",
+		"/usr/local/mitsubishi/devenv/TeamSiteContent/section/homepage/homepage.xml",
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/server.env",
+		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/server.env",
+		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/server.xml",
+		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/Mitsubishicars.properties",
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/robots.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/README.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/modules/RequestQuoteThanks.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/modules/Compare.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/inventory/inventory.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/special-offers/modules/special-offers.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/special-offers/home.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/global/_bing-map.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/global/GlobalHead.ftl",
+		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/local/server.env",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/switch_to_dev_branch.sh",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/updatedcrs.sh",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/examples/styles.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/dlcontent.sh",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/ftl3583-3795-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/ftl3794-3860-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/ftl3861-3909-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/ftl4074-4130-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/ftl4130-4227-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log3583-3795-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log3660-HEAD-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-handlebars/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64-vlq.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-imagemin/node_modules/jpegtran-bin/node_modules/request/node_modules/mime/mime.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-imagemin/node_modules/optipng-bin/node_modules/request/node_modules/mime/mime.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-jshint/node_modules/jshint/tests/stable/regression/libs/lodash.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-dox/node_modules/dox-foundation/node_modules/jade/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64-vlq.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt/node_modules/lodash/doc/README.md",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt/node_modules/lodash/lodash.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log3794-3860-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log3861-3909-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log4074-4130-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-connect/node_modules/connect/node_modules/send/node_modules/mime/mime.js",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log4130-4227-list.txt",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/dev.sh",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/NextSteps.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/GalleryDetails.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/Gallery.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/FooterExplore.ftl",
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/FeatureDetails.ftl"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass",
+			"/usr/local/mitsubishi/devenv/TeamSiteContent/staticui",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src,/usr/local/mitsubishi/devenv/wlp/usr/servers/MitsubishiServer/dropins/war/MitsubishiCars/WEB-INF/classes/freemarker",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src",
+			"/usr/local/mitsubishi/devenv/wlp/usr/servers/MitsubishiServer/dropins/war/MitsubishiCars/WEB-INF/classes/freemarker",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js,*.js",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/,*.sh",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/*.sh",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/build",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js",
+			"<open files>",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/vehicles/2014",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/owners",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/owners",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/sass/global",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/",
+			"/usr/local/mitsubishi/devenv/MitsubishiCarsUI"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"bottomnav-btn",
+			"${url}",
+			"inventory",
+			"recall",
+			"recall-link",
+			"recall-container",
+			"callWebService",
+			"failed to load",
+			"= currentYear",
+			"printYear",
+			"_onVehicleSelected",
+			"_renderFil",
+			"form",
+			"this.data",
+			"template",
+			"Handlebars",
+			"http:",
+			"s_code",
+			"'GET'",
+			"GET",
+			".call(",
+			"vehicles",
+			"queryStringData",
+			"_getQuery",
+			"AkmO09chCDwBLDK7e-EhLYdZI0a9o6UHdWl3d8gK8Ig9TkmfEYnoEYh_NDlfm2ON",
+			"branches/dev/",
+			"trunk",
+			"build",
+			"pageURLParts[1]",
+			"min-height",
+			"Header",
+			"_checkForOtherUnique",
+			"exteriorColors",
+			"updateOption",
+			"set('exteriorColors",
+			"Header",
+			"next",
+			"transmission",
+			"buildsummary-trans-type",
+			"disclaimer",
+			"			\n",
+			"getInteriorColorForFog",
+			"length",
+			"JSON.parse",
+			"JSON.parse\n",
+			"fixed",
+			"position: fixed",
+			"No Charge",
+			"bnpmodel",
+			"interiorws",
+			"_loadOptionsData",
+			"Features",
+			"trimdesc",
+			"TrimDesc",
+			"trunk",
+			"lancer",
+			"setCookie",
+			";\n",
+			"optionscfg",
+			"_loadInventoryData",
+			"setStepTab",
+			"start",
+			"CODE REVIEW:",
+			"OfferLead",
+			"You",
+			"CODE REVIEW:",
+			"labels",
+			"packages",
+			"package",
+			"Package",
+			"Packages",
+			"packages",
+			"option",
+			"options",
+			"Options",
+			"_onPackagesDataResult",
+			"buildtrims",
+			"_dependencies",
+			"				\n",
+			"		\n",
+			"Backbone.history",
+			"require(",
+			"vehicle.model",
+			"dearler",
+			"macro allPhotos",
+			"allPhotos",
+			"vehicle.",
+			"shell",
+			"2014",
+			"vehicleContent",
+			"vehicleModel",
+			"2013",
+			".svg",
+			"CODE REVIEW",
+			"_",
+			"pubsub",
+			"CODE REVIEW",
+			"			",
+			"mitsubishi",
+			"@mixin font",
+			"buildtrims",
+			"<#assign icon",
+			"icon",
+			"\">",
+			"buildcolors",
+			"buildtrims",
+			"scroll",
+			"grain-lighter.png",
+			".svg",
+			"strong",
+			"paginate",
+			"body",
+			"section",
+			"body",
+			"background-color",
+			"mb-button",
+			"defineImagesLoaded",
+			"eventie",
+			"FreeTile",
+			"define",
+			"evenEmitter",
+			"freetile",
+			"_m",
+			"_mitsu_load",
+			"width",
+			"<#",
+			">",
+			"/static/img"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"branches/dev2",
+			"branches/dev",
+			"inventorycfg",
+			"accessories",
+			"accessory",
+			"Accessory",
+			"Accessories",
+			"accessories",
+			"package",
+			"packages",
+			"Packages",
+			"buildoptions",
+			"dealer",
+			"',",
+			"buildoptions",
+			".buildtrims-list{\n		display:block;\n		@include rem(margin-top,$buildtrims-list-padding);\n		@include clearfix;	\n	}\n\n		.buildtrims-list-item{\n			position:relative;\n			float:left;\n			display:block;\n			@include rem(max-height,140px);\n			@include rem(min-height,140px);\n			@include padding($buildtrims-list-padding);\n			\n			width:49.4%;\n			margin:.3%;\n			background-color:$mitsubishi-white;\n\n			box-shadow: 2px 2px 1px rgba(0,0,0,.25);\n\n			&.active{\n				.buildtrims-list-item-selectbutton{\n					background-color:$mitsubishi-red;\n\n					.activetext{\n						display:inline !important;\n					}\n\n					.inactivetext{\n						display:none !important;\n					}\n				}\n			}\n		}\n			.buildtrims-list-item-selectbutton{\n				position:absolute !important;\n				top:$buildtrims-list-padding;\n				right:$buildtrims-list-padding;\n\n				.activetext{\n					display:none;\n				}\n\n				.inactivetext{\n					display:inline;\n				}\n			}\n\n			.buildtrims-list-item-detailsbutton{\n				width:auto;\n				display:block !important;\n				position:absolute !important;\n				bottom:$buildtrims-list-padding;\n				left:$buildtrims-list-padding;\n			}\n\n			.buildtrims-list-item-price{\n				text-align:right;\n				width:50%;\n				display:block;\n				position:absolute;\n				top:72px;\n				right:$buildtrims-list-padding;\n				@include font-size(15px);\n				em{\n					font-family: Subline;\n					@include font-size(20px);\n				}\n			}\n\n			.buildtrims-list-item-header{\n				font-family: Subline;\n				@include font-size(30px);\n				em{\n					font-family: Headline;\n					font-style: normal;\n				}\n			}",
+			"buildoptions",
+			"buildcolors",
+			"',",
+			"/img",
+			"",
+			"class=\"button\" href=\"landing.html\">explore",
+			"<a class=\"button\" href=\"landing.html\">explore</a>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tasks/require-prepare.js",
+					"settings":
+					{
+						"buffer_size": 7670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "Gruntfile.js",
+					"settings":
+					{
+						"buffer_size": 134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								131,
+								131
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.509379885357,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 228.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 264.0,
+	"status_bar_visible": true
+}
