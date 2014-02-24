@@ -19,7 +19,7 @@ module.exports={
         waitSeconds: 15
       },
       configfile : "requirepaths.out",
-      excludeforsub: ['global']
+      excludeforsub:  ['global']
     }
   }
 };
