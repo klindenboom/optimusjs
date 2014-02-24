@@ -2073,6 +2073,7 @@ require.config({
     "baseUrl": "./",
     "waitSeconds": 15,
     "paths": {
+        "crazy/sub/folder/path/submodule": "js/crazy/sub/folder/path/_submodule",
         "global": "js/global",
         "page/page": "js/page/page"
     }

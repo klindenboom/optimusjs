@@ -246,6 +246,7 @@
 				var rel=relativeDir.split('/');
 				var outfile=outDir+file.split('/').slice(rel.length).join("/");
 				grunt.log.writeln("copying for development:".yellow+outfile);
+				mkpath.sync(path.dirname(outfile));
 				fs.createReadStream(file).pipe(fs.createWriteStream(outfile));
 			});
 
