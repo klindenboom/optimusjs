@@ -25,6 +25,7 @@
 	var _outdir = '';
 	var _ssifile = '';
 	var _rjsfile = __dirname + "/../loader/require.js";
+	var _almondfile = __dirname + "/../loader/almond.js";
 
 	var getModuleIDFromPath=function(file,relativeDir,absoluteDir,subprefix){
 		var fnp = file.split('/');
@@ -315,7 +316,7 @@
 
 		if(_configfile && _outfile){
 			var cf = fs.readFileSync(_configfile);
-			var rjf = fs.readFileSync(_rjsfile);
+			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(__dirname + "/../loader/loader.js");
 			var p=_outfile.split('/');
 			p.pop();
