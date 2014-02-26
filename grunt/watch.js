@@ -3,7 +3,7 @@ module.exports={
 		files:[
 		'test/src/**/*.html'
 		],
-		tasks: ['copy:html'],
+		tasks: ['copy:dev'],
 		options:{
 			spawn:false 
 		}

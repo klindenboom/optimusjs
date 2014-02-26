@@ -1,14 +1,20 @@
 {
+  "name": "Optimus",
+  "version": "0.1.0",
   "dependencies": {
-    "merge": "~1.1.2"
+    "merge": "~1.1.2",
+    "connect-include": "~0.2.1"
   },
   "devDependencies": {
     "load-grunt-config": "~0.7.1",
     "grunt-contrib-requirejs": "~0.4.1",
     "mkpath": "~0.1.0",
     "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-connect": "git://github.com/gruntjs/grunt-contrib-connect.git",
     "grunt-open": "~0.2.3",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-filerev": "~0.2.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "connect-include": "~0.2.1"
   }
 }
