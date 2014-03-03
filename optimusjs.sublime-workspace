@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"_confi",
+				"_configdata"
+			],
+			[
+				"get",
+				"getElementsByTagName"
+			],
+			[
 				"ba",
 				"background-color"
 			],
@@ -76,21 +84,130 @@
 	"buffers":
 	[
 		{
-			"file": "tasks/require-prepare.js",
+			"file": "tasks/optimus.js",
 			"settings":
 			{
-				"buffer_size": 7670,
+				"buffer_size": 11364,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "module.exports = function(grunt) {\n  grunt.initConfig({\n    pkg: grunt.file.readJSON('package.json'),\n	});\n\n  grunt.loadTasks();\n  \n};",
-			"file": "Gruntfile.js",
-			"file_size": 131,
-			"file_write_time": 1392937846000000,
+			"file": "grunt/clean.js",
 			"settings":
 			{
-				"buffer_size": 134,
+				"buffer_size": 66,
+				"line_ending": "Unix",
+				"name": "module.exports={"
+			}
+		},
+		{
+			"file": "grunt/filerev.js",
+			"settings":
+			{
+				"buffer_size": 250,
+				"line_ending": "Unix",
+				"name": "{"
+			}
+		},
+		{
+			"file": "test/src/index.html",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/src/js/global.js",
+			"settings":
+			{
+				"buffer_size": 63,
+				"line_ending": "Unix",
+				"name": "define([],function(){"
+			}
+		},
+		{
+			"file": "test/src/js/page/page.js",
+			"settings":
+			{
+				"buffer_size": 103,
+				"line_ending": "Unix",
+				"name": "define([],function(){"
+			}
+		},
+		{
+			"file": "loader/loader.js",
+			"settings":
+			{
+				"buffer_size": 487,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/www/js/crazy/sub/folder/path/submodule.js",
+			"settings":
+			{
+				"buffer_size": 56,
+				"line_ending": "Unix",
+				"name": "define([],function(){"
+			}
+		},
+		{
+			"contents": "module.exports={\n	static: {\n		options: {\n			protocol: \"http\", // Change to \"http\" for non-secure testing\n			port: 6001,\n			hostname: '*',\n			base: 'test/www',\n            middleware: function(connect,options,middlewares) {\n            	var ssInclude=require('connect-include');\n                // Here we insert connect-include, use the same pattern to add other middleware\n                middlewares.push(ssInclude('test/www'));\n\n                return middlewares;\n            }\n  		}\n	}\n}",
+			"file": "grunt/connect.js",
+			"file_size": 164,
+			"file_write_time": 1393448202000000,
+			"settings":
+			{
+				"buffer_size": 492,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 503,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 117,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "grunt/optimus.js",
+			"settings":
+			{
+				"buffer_size": 1140,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "grunt/aliases.js",
+			"settings":
+			{
+				"buffer_size": 141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "grunt/watch.js",
+			"settings":
+			{
+				"buffer_size": 250,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "grunt/copy.js",
+			"settings":
+			{
+				"buffer_size": 216,
 				"line_ending": "Unix"
 			}
 		}
@@ -131,6 +248,17 @@
 	},
 	"file_history":
 	[
+		"/Users/astrout/Development/optimusjs/node_modules/connect-include/lib/connect-include.js",
+		"/Users/astrout/Development/optimusjs/node_modules/grunt-contrib-connect/tasks/connect.js",
+		"/Users/astrout/Development/optimusjs/loader/require.js",
+		"/Users/astrout/Development/optimusjs/loader/scriptloader.js",
+		"/Users/astrout/Development/optimusjs/grunt/connect.js",
+		"/Users/astrout/Development/optimusjs/grunt/open.js",
+		"/Users/astrout/Development/optimusjs/grunt/copy.js",
+		"/Users/astrout/Development/optimusjs/loader/loader.min.js",
+		"/Users/astrout/Development/optimusjs/grunt/aliases.js",
+		"/Users/astrout/Development/optimusjs/loader/loader-require.js",
+		"/Users/astrout/Development/optimusjs/tasks/require-prepare.js",
 		"/Users/astrout/Development/optimusjs/package.json",
 		"/Users/astrout/Development/petsmart-natgeo/www/js/global.js",
 		"/Users/astrout/Development/petsmart-natgeo/src/index.html",
@@ -247,18 +375,7 @@
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-jshint/node_modules/jshint/tests/stable/regression/libs/lodash.js",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-dox/node_modules/dox-foundation/node_modules/jade/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/lib/source-map/base64-vlq.js",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt/node_modules/lodash/doc/README.md",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt/node_modules/lodash/lodash.js",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log3794-3860-list.txt",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log3861-3909-list.txt",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log4074-4130-list.txt",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt-contrib-connect/node_modules/connect/node_modules/send/node_modules/mime/mime.js",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/logs/log4130-4227-list.txt",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/dev.sh",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/NextSteps.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/GalleryDetails.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/Gallery.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/FooterExplore.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/modules/FeatureDetails.ftl"
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/node_modules/grunt/node_modules/lodash/lodash.js"
 	],
 	"find":
 	{
@@ -304,6 +421,21 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"host",
+			"move",
+			"copyonly",
+			"prettyjson",
+			"mkpath",
+			"prettyjson",
+			"getModuleID",
+			".paths",
+			".shim",
+			"options",
+			"data.",
+			"global",
+			".config",
+			"options()",
+			"fs",
 			"bottomnav-btn",
 			"${url}",
 			"inventory",
@@ -416,22 +548,7 @@
 			"strong",
 			"paginate",
 			"body",
-			"section",
-			"body",
-			"background-color",
-			"mb-button",
-			"defineImagesLoaded",
-			"eventie",
-			"FreeTile",
-			"define",
-			"evenEmitter",
-			"freetile",
-			"_m",
-			"_mitsu_load",
-			"width",
-			"<#",
-			">",
-			"/static/img"
+			"section"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -439,6 +556,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"development",
+			"options.",
 			"branches/dev2",
 			"branches/dev",
 			"inventorycfg",
@@ -477,24 +596,267 @@
 			[
 				{
 					"buffer": 0,
-					"file": "tasks/require-prepare.js",
+					"file": "tasks/optimus.js",
 					"settings":
 					{
-						"buffer_size": 7670,
+						"buffer_size": 11364,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								192,
-								192
+								10564,
+								10564
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4263.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "grunt/clean.js",
+					"settings":
+					{
+						"buffer_size": 66,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"auto_name": "module.exports={",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "grunt/filerev.js",
+					"settings":
+					{
+						"buffer_size": 250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test/src/index.html",
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "test/src/js/global.js",
+					"settings":
+					{
+						"buffer_size": 63,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"auto_name": "define([],function(){",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "test/src/js/page/page.js",
+					"settings":
+					{
+						"buffer_size": 103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"auto_name": "define([],function(){",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "loader/loader.js",
+					"settings":
+					{
+						"buffer_size": 487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								487,
+								487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "test/www/js/crazy/sub/folder/path/submodule.js",
+					"settings":
+					{
+						"buffer_size": 56,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"auto_name": "define([],function(){",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "grunt/connect.js",
+					"settings":
+					{
+						"buffer_size": 492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								492,
+								492
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -505,23 +867,129 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 1,
+					"buffer": 10,
 					"file": "Gruntfile.js",
 					"settings":
 					{
-						"buffer_size": 134,
+						"buffer_size": 117,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								131,
-								131
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "grunt/optimus.js",
+					"settings":
+					{
+						"buffer_size": 1140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1140,
+								1140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "grunt/aliases.js",
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "grunt/watch.js",
+					"settings":
+					{
+						"buffer_size": 250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								232,
+								232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "grunt/copy.js",
+					"settings":
+					{
+						"buffer_size": 216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								216,
+								216
 							]
 						],
 						"settings":
