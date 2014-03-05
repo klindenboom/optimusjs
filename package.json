@@ -1,5 +1,5 @@
 {
-  "name": "Optimus",
+  "name": "optimus",
   "version": "0.1.0",
   "dependencies": {
     "merge": "~1.1.2",
