@@ -34,6 +34,12 @@
 		var fn=fnp[fnp.length-1];
 		var rel = relativeDir.split('/');
 		var abs = absoluteDir.split('/');
+		if(rel[rel.length-1]==''){
+			rel.pop();
+		}
+		if(abs[abs.length-1]==''){
+			abs.pop();
+		}
 		var frag = fnp.slice(rel.length,fnp.length-1).join('/');
 		if(fn.indexOf('.')>-1)fn=fn.substr(0,fn.lastIndexOf('.'));
 		var fr2 = frag.split('/').slice(abs.length-rel.length).join("/");
@@ -212,7 +218,7 @@
 				options.paths=paths;
 			});
 		}else{ // If resulting from a changed file, find where it is referenced.
-			files=[watchtarget,options.relativeDir+"/"+options.global+".js"];
+			files=[watchtarget,(options.relativeDir!=''?options.relativeDir+"/":'')+options.global+".js"];
 			var targetid=getModuleIDFromPath(watchtarget,relativeDir,absoluteDir,subprefix)[0];
 			grunt.log.writeln("Target ID:"+targetid);
 			var targetdeps=_dependencies[targetid];
