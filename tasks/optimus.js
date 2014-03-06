@@ -26,6 +26,7 @@
 	var _ssifile = '';
 	var _rjsfile = __dirname + "/../loader/require.js";
 	var _almondfile = __dirname + "/../loader/almond.js";
+	console.log("Dirname:"+__dirname);
 
 	var getModuleIDFromPath=function(file,relativeDir,absoluteDir,subprefix){
 		var fnp = file.split('/');
