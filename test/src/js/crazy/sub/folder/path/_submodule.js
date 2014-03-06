@@ -1,3 +1,3 @@
 define([],function(){
-	console.log("Partial Loaded")
+	console.log("Partial Loaded");
 });

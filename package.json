@@ -22,6 +22,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-filerev": "~0.2.1",
     "grunt-contrib-clean": "~0.5.0",
-    "connect-include": "~0.2.1"
+    "connect-include": "~0.2.1",
+    "grunt-contrib-jshint": "^0.8.0"
   }
 }

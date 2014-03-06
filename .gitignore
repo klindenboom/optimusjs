@@ -1,3 +1,3 @@
-test/www
-node_modules
+test/www/*
+node_modules/*
 

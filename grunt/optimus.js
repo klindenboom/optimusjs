@@ -7,6 +7,8 @@ module.exports={
       },
       shim:{
       },
+      watchtask:'optimusjs',
+      jshinttask:'optimusjs',
       exclude : 'exclude/**/*',
       inDir: 'test/src/js/',
       outDir: 'test/www/',

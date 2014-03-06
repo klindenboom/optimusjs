@@ -24,6 +24,10 @@
 	var _outfile = '';
 	var _outdir = '';
 	var _ssifile = '';
+	var _watchhooked = false;
+	var _watchtask = '';
+	var _watchtarget = '';
+	var _jshinttask = '';
 	var _rjsfile = path.normalize(__dirname + "/../loader/require.js");
 	var _almondfile = path.normalize(__dirname + "/../loader/almond.js");
 	var _loaderfile = path.normalize(__dirname + "/../loader/loader.js");
@@ -89,7 +93,17 @@
         filerev.summary[path.normalize(file)] = path.join(dirname, newName);
         grunt.log.writeln('✔ ' + file + ' changed to ' + newName);
         grunt.filerev=filerev;
-	}
+	};
+
+	var onWatchEvent=function(action,filepath,target){
+		// Only perform optimizations for optimus JS targets
+		if(target == _watchtask){
+			// Set config options for the optimus task that set the watch call up
+			grunt.config(['optimus',_watchtarget,'watchcall'],action);
+			grunt.config(['optimus',_watchtarget,'watchcall'],filepath);
+			grunt.config(['jshint',_jshinttask],filepath);
+		}
+	};
 
 
 	/**
@@ -114,6 +128,58 @@
 		var optimize = options.optimize; //uglify or none
 		var files;
 		var rj = grunt.config.get('requirejs');
+		var watch = grunt.config.get('watch');
+		var jshint = grunt.config.get('jshint');
+		var filesglob=[''+inDir+"**/*.js"];
+
+		if(!exclude){
+			files=grunt.file.expand(''+inDir+"**/*.js");
+		}else{
+			if(!Array.isArray(exclude)){
+				exclude=[exclude];
+			}
+			for(var i=0;i<exclude.length;i++){
+				filesglob.push('!'+inDir+exclude[i]);
+			}
+			files=grunt.file.expand(filesglob);
+		}
+
+		if(typeof(options.jshinttask) !== 'undefined'){
+			if(typeof(jshint) === 'undefined' ){
+				jshint = {};
+			}
+			_jshinttask = options.jshinttask;
+			if(typeof(jshint[_jshinttask]) === 'undefined'){
+				grunt.config.set(['jshint',_jshinttask],filesglob);
+				jshint=grunt.config.get('jshint');
+				grunt.log.writeln("Added jshint task (jshint:"+_jshinttask+")\n"+prettyjson.render(jshint));
+			}
+		}
+		if(typeof(options.watchtask) !== 'undefined'){
+			if(typeof(watch) === 'undefined'){
+				watch={};
+			}
+			if(typeof(watch[options.watchtask]) === 'undefined'){
+				_watchtask = options.watchtask;
+				_watchtarget = this.target;
+				var watchlist = typeof(options.watchlist) !== 'undefined'?options.watchlist.split(','):[];
+				watchlist.unshift('optimus:'+_watchtarget);
+
+				watch[_watchtask] = {
+					files:filesglob,
+					tasks: watchlist,
+					options:{
+						spawn:false
+					}
+				}
+				grunt.log.writeln("Added watch task:\n"+prettyjson.render(watch[_watchtask]));
+				grunt.config.set('watch',watch);
+				if(!_watchhooked){
+					grunt.event.on('watch',onWatchEvent);
+					_watchhooked=true;
+				}
+			}
+		}
 		
 		if(typeof(options.jquery) !== 'undefined'){
 			_jqueryfile=options.jquery;
@@ -174,18 +240,7 @@
 			grunt.config.set('optimus-post',postcfg);
 			// end config entry generation
 
-			if(!exclude){
-				files=grunt.file.expand(''+inDir+"**/*.js");
-			}else{
-				var arr=[''+inDir+"**/*.js"]
-				if(!Array.isArray(exclude)){
-					exclude=[exclude];
-				}
-				for(var i=0;i<exclude.length;i++){
-					arr.push('!'+inDir+exclude[i]);
-				}
-				files=grunt.file.expand(arr);
-			}
+
 
 			grunt.log.writeln("\n\nFILES:".blue,files);
 			grunt.log.writeln("\n\nGenerating module paths and dependencies".green.underline);
@@ -291,8 +346,7 @@
 		grunt.log.writeln("RJ:"+prettyjson.render(rj));
 		
 		if(!options.development){
-			grunt.task.run("requirejs","filerev","optimus-post");
-			
+			grunt.task.run("requirejs","filerev","optimus-post:"+this.target);
 		}else{
 			_globalmod = "";
 			grunt.util.async.forEach(files,function(file,next){
@@ -303,8 +357,11 @@
 				mkpath.sync(path.dirname(outfile));
 				fs.createReadStream(file).pipe(fs.createWriteStream(outfile));
 			});
-
-			grunt.task.run("optimus-post");
+			if(typeof(_jshinttask) !== 'undefined'){
+				grunt.task.run("jshint:"+_jshinttask,"optimus-post:"+this.target);
+			}else{
+				grunt.task.run("optimus-post:"+this.target);
+			}
 		}
 	});
 

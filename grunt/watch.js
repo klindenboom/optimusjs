@@ -7,14 +7,5 @@ module.exports={
 		options:{
 			spawn:false 
 		}
-	},
-	js:{
-		files:[
-		'test/src/js/**/*.js'
-		],
-       tasks: ['optimus'],
-        options:{
-        	spawn:false
-        }
-    }
+	}
 }
