@@ -102,6 +102,7 @@
 		var subprefix = options.subprefix; // eg: '_'
 		var configfile = options.configfile; // eg: 'requirepaths.out'
 		var excludeforsub = options.excludeforsub;
+		var excludeformain = options.excludeformain;
 		var exclude = options.exclude;
 		var optimize = options.optimize; //uglify or none
 		var files;
@@ -163,8 +164,16 @@
 			if(!exclude){
 				files=grunt.file.expand(''+inDir+"**/*.js");
 			}else{
-				files=grunt.file.expand([''+inDir+"**/*.js",'!'+inDir+exclude]);
+				var arr=[''+inDir+"**/*.js"]
+				if(!Array.isArray(exclude)){
+					exclude=[exclude];
+				}
+				for(var i=0;i<exclude.length;i++){
+					arr.push('!'+inDir+exclude[i]);
+				}
+				files=grunt.file.expand(arr);
 			}
+
 			grunt.log.writeln("\n\nFILES:".blue,files);
 			grunt.log.writeln("\n\nGenerating module paths and dependencies".green.underline);
 			grunt.util.async.forEach(files,function(file,next){
