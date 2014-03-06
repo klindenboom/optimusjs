@@ -24,8 +24,9 @@
 	var _outfile = '';
 	var _outdir = '';
 	var _ssifile = '';
-	var _rjsfile = __dirname + "/../loader/require.js";
-	var _almondfile = __dirname + "/../loader/almond.js";
+	var _rjsfile = path.normalize(__dirname + "/../loader/require.js");
+	var _almondfile = path.normalize(__dirname + "/../loader/almond.js");
+	var _loaderfile = path.normalize(__dirname + "/../loader/loader.js");
 	console.log("Dirname:"+__dirname);
 
 	var getModuleIDFromPath=function(file,relativeDir,absoluteDir,subprefix){
@@ -318,7 +319,7 @@
 		if(_configfile && _outfile){
 			var cf = fs.readFileSync(_configfile);
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
-			var gf = fs.readFileSync(__dirname + "/../loader/loader.js");
+			var gf = fs.readFileSync(_loaderfile);
 			var p=_outfile.split('/');
 			p.pop();
 			p=p.join('/');
