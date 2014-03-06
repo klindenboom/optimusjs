@@ -27,6 +27,7 @@
 	var _rjsfile = path.normalize(__dirname + "/../loader/require.js");
 	var _almondfile = path.normalize(__dirname + "/../loader/almond.js");
 	var _loaderfile = path.normalize(__dirname + "/../loader/loader.js");
+	var _jqueryfile = path.normalize(__dirname + "/../loader/jquery.min.js");
 	console.log("Dirname:"+__dirname);
 
 	var getModuleIDFromPath=function(file,relativeDir,absoluteDir,subprefix){
@@ -113,6 +114,10 @@
 		var optimize = options.optimize; //uglify or none
 		var files;
 		var rj = grunt.config.get('requirejs');
+		
+		if(typeof(options.jquery) !== 'undefined'){
+			_jqueryfile=options.jquery;
+		}
 
 		if(absoluteDir[absoluteDir.length-1]===""){
 			absoluteDir.pop();
@@ -337,12 +342,13 @@
 			var cf = fs.readFileSync(_configfile);
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
+			var jq = fs.readFileSync(_jqueryfile);
 			var p=_outfile.split('/');
 			p.pop();
 			p=p.join('/');
 			grunt.log.writeln("Path:".blue+p);
 			mkpath.sync(p);
-			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf));
+			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq));
 
 			var od = _outdir.split('/');
 			if(od[od.length-1] === ''){

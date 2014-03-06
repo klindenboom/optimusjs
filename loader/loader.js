@@ -1,3 +1,7 @@
+if(!jQuery){
+{{jquery}}
+}
+
 {{requirejs}}
 
 {{optimusconfig}}
