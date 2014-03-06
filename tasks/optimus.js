@@ -344,7 +344,7 @@
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = fs.readFileSync(_jqueryfile);
-			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
+			var gm = filereved?fs.readFileSync(_outdir+'/'+_configdata.paths[_globalmod]+'.js'):'';
 			
 			var p=_outfile.split('/');
 			p.pop();
