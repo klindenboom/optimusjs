@@ -18,6 +18,7 @@
 	var mkpath = require('mkpath');
 	var crypto=require('crypto');
 	var _globalout = ''; // for prepending config
+	var _globalmod = '';
 	var _configfile = '';
 	var _configdata = {};
 	var _dependencies = {};
@@ -293,7 +294,9 @@
 		
 		if(!options.development){
 			grunt.task.run("requirejs","filerev","optimus-post");
+			_globalmod = fs.readFileSync(_globalout);
 		}else{
+			_globalmod = "";
 			grunt.util.async.forEach(files,function(file,next){
 				var outfile=file.split('/');
 				var rel=relativeDir.split('/');
@@ -343,13 +346,13 @@
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = fs.readFileSync(_jqueryfile);
-			var globalmod = filereved?fs.readFileSync(_globalout):'';
+			
 			var p=_outfile.split('/');
 			p.pop();
 			p=p.join('/');
 			grunt.log.writeln("Path:".blue+p);
 			mkpath.sync(p);
-			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq).replace('{{mainmodule}}',globalmod));
+			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq).replace('{{mainmodule}}',_globalmod));
 
 			var od = _outdir.split('/');
 			if(od[od.length-1] === ''){
