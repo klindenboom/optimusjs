@@ -6,6 +6,8 @@ if(typeof(jQuery) === 'undefined'){
 
 {{optimusconfig}}
 
+{{mainmodule}}
+
 (function(){
     var scripts=document.getElementsByTagName('script');
     var i=scripts.length;

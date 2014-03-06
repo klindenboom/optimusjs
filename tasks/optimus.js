@@ -343,12 +343,13 @@
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = fs.readFileSync(_jqueryfile);
+			var globalmod = filereved?fs.readFileSync(_globalout):'';
 			var p=_outfile.split('/');
 			p.pop();
 			p=p.join('/');
 			grunt.log.writeln("Path:".blue+p);
 			mkpath.sync(p);
-			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq));
+			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq).replace('{{mainmodule}}',globalmod));
 
 			var od = _outdir.split('/');
 			if(od[od.length-1] === ''){

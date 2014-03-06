@@ -4,9 +4,9 @@ require.config({
     "baseUrl": "./",
     "waitSeconds": 15,
     "paths": {
-        "crazy/sub/folder/path/submodule": "js/crazy/sub/folder/path_submodule.68ef2ffe",
-        "global": "jsglobal.d41d8cd9",
-        "page/page": "js/pagepage.27b7fd22"
+        "crazy/sub/folder/path/submodule": "js/crazy/sub/folder/path/_submodule",
+        "global": "js/global",
+        "page/page": "js/page/page"
     }
 });
 
