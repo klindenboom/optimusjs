@@ -327,7 +327,7 @@
 					grunt.log.writeln("-revpath:".blue+fn);
 					if(typeof(grunt.filerev.summary[fn]) !== 'undefined'){
 						grunt.log.writeln("-overwrite with:".yellow + path.dirname(_configdata.paths[fp])+path.basename(grunt.filerev.summary[fn],'.js'));
-						_configdata.paths[fp]=path.dirname(_configdata.paths[fp])+path.basename(grunt.filerev.summary[fn],'.js');
+						_configdata.paths[fp]=path.dirname(_configdata.paths[fp])+'/'+path.basename(grunt.filerev.summary[fn],'.js');
 					}
 				}
 				grunt.log.writeln('Updated config with filerev:\n'+prettyjson.render(_configdata));
@@ -344,7 +344,7 @@
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = fs.readFileSync(_jqueryfile);
-			var gm = filereved?fs.readFileSync(_outdir+'/'+_configdata.paths[_globalmod]+'.js'):'';
+			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
 			
 			var p=_outfile.split('/');
 			p.pop();
