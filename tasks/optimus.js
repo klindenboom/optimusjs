@@ -318,6 +318,7 @@
 		grunt.log.writeln("cfg:".grey+_configfile);
 		grunt.log.writeln("-----------------------------------------------------");
 		var filereved = (typeof(grunt.filerev) !== 'undefined' && typeof(grunt.filerev.summary) !== 'undefined');
+		var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
 		if(_configdata && _configfile){
 			if(filereved){
 				grunt.log.writeln('Filerev found:'.green +"\n"+prettyjson.render(grunt.filerev.summary));
@@ -344,7 +345,6 @@
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = fs.readFileSync(_jqueryfile);
-			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
 			
 			var p=_outfile.split('/');
 			p.pop();
