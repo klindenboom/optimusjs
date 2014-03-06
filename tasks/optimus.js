@@ -17,7 +17,6 @@
 	var merge = require('merge');
 	var mkpath = require('mkpath');
 	var crypto=require('crypto');
-	var _globalout = ''; // for prepending config
 	var _globalmod = '';
 	var _configfile = '';
 	var _configdata = {};
@@ -99,7 +98,7 @@
 	**/
 	grunt.registerMultiTask('optimus','Build a configuration for the R.JS optimizer from JS folder structure',function(){
 		var options = this.options();
-		var global = options.global;
+		var global = _globalmod=options.global;
 		var inDir = options.inDir; // eg: 'src/js/'
 		var outDir = options.outDir; // eg: 'static/js/'
 		_outdir=outDir;
@@ -270,7 +269,6 @@
 						o.options.exclude=excludeforsub;
 					}else{
 						grunt.log.writeln((fileid[0]+" is the root/global module").grey);
-						_globalout=o.options.out;
 					}
 					
 					rj[fileid[0]]=o;
@@ -294,7 +292,7 @@
 		
 		if(!options.development){
 			grunt.task.run("requirejs","filerev","optimus-post");
-			_globalmod = fs.readFileSync(_globalout);
+			
 		}else{
 			_globalmod = "";
 			grunt.util.async.forEach(files,function(file,next){
@@ -346,13 +344,14 @@
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = fs.readFileSync(_jqueryfile);
+			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
 			
 			var p=_outfile.split('/');
 			p.pop();
 			p=p.join('/');
 			grunt.log.writeln("Path:".blue+p);
 			mkpath.sync(p);
-			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq).replace('{{mainmodule}}',_globalmod));
+			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq).replace('{{mainmodule}}',gm));
 
 			var od = _outdir.split('/');
 			if(od[od.length-1] === ''){
