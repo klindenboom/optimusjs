@@ -123,6 +123,8 @@
 		if(!rj){
 			rj={options:{}};
 			grunt.config.set('requirejs',rj);
+		}else{
+			options.paths=options.paths!==undefined?merge(options.paths,rj.options.paths):rj.options.paths;
 		}
 		
 		var paths = options.paths!==undefined ? options.paths:{};
