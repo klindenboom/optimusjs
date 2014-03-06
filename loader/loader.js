@@ -1,4 +1,4 @@
-if(!jQuery){
+if(typeof(jQuery) === 'undefined'){
 {{jquery}}
 }
 
