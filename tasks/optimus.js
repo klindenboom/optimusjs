@@ -122,8 +122,8 @@
 		var absoluteDir = options.inDir.split('/');
 		var subprefix = options.subprefix; // eg: '_'
 		var configfile = options.configfile; // eg: 'requirepaths.out'
-		var excludeforsub = options.excludeforsub;
-		var excludeformain = options.excludeformain;
+		var excludeforsub = typeof(options.excludeforsub)!=='undefined'?options.excludeforsub:[];
+		var excludeforglobal = typeof(options.excludeforglobal)!=='undefined'?options.excludeforglobal:[];
 		var exclude = options.exclude;
 		var optimize = options.optimize; //uglify or none
 		var files;
@@ -131,6 +131,8 @@
 		var watch = grunt.config.get('watch');
 		var jshint = grunt.config.get('jshint');
 		var filesglob=[''+inDir+"**/*.js"];
+
+
 
 		if(!exclude){
 			files=grunt.file.expand(''+inDir+"**/*.js");
@@ -320,9 +322,10 @@
 						}
 					};
 
-					if(fn!==global){
+					if(fileid[0]!==global){
 						o.options.exclude=excludeforsub;
 					}else{
+						o.options.exclude=excludeforglobal;
 						grunt.log.writeln((fileid[0]+" is the root/global module").grey);
 					}
 					
