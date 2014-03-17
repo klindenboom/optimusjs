@@ -1,8 +1,8 @@
+{{requirejs}}
+
 if(typeof(jQuery) === 'undefined'){
 {{jquery}}
 }
-
-{{requirejs}}
 
 {{optimusconfig}}
 
