@@ -15,9 +15,9 @@ if(typeof(jQuery) === 'undefined'){
     while(i--){
         var stag=scripts[i];
         if(stag){
-            var modlist=stag.getAttribute('data-module-list')
-            if(modlist){
-                var mods=modlist.split(',');
+            var modlist=stag.getAttribute('data-module-list');
+            if(typeof(modlist)!=='undefined'){
+                var mods=String(modlist).split(',');
 
                 require(mods,function(){
 
