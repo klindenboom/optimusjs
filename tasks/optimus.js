@@ -6,34 +6,44 @@
  * Licensed under the MIT license.
  */
 
- 'use strict';
+'use strict';
+// Required Modules
+var path = require('path');
+var fs = require('fs');
+var colors = require('colors');
+var prettyjson=require('prettyjson');
+var merge = require('merge');
+var mkpath = require('mkpath');
+var crypto=require('crypto');
 
- module.exports=function(grunt){
-	// Required Modules
-	var path = require('path');
-	var fs = require('fs');
-	var colors = require('colors');
-	var prettyjson=require('prettyjson');
-	var merge = require('merge');
-	var mkpath = require('mkpath');
-	var crypto=require('crypto');
+
+module.exports=function(grunt){
+	// The path to the global module
 	var _globalmod = '';
+	// Configuration storage file
 	var _configfile = '';
+	// Configuration (paths cache)
 	var _configdata = {};
+	// Dependency cache
 	var _dependencies = {};
 	var _outfile = '';
+	// Output folder
 	var _outdir = '';
+	// SSI file, for grunt-filerev integration
 	var _ssifile = '';
+	// Watch integration
 	var _watchhooked = false;
 	var _watchtask = '';
 	var _watchtarget = '';
+	// JSHint integration
 	var _jshinttask = '';
+	// Third party libraries for injection into loader
 	var _rjsfile = path.normalize(__dirname + "/../loader/require.js");
 	var _almondfile = path.normalize(__dirname + "/../loader/almond.js");
 	var _loaderfile = path.normalize(__dirname + "/../loader/loader.js");
 	var _jqueryfile = path.normalize(__dirname + "/../loader/jquery.min.js");
-	console.log("Dirname:"+__dirname);
 
+	// Acquires the module ID and relative path as an array of two elements
 	var getModuleIDFromPath=function(file,relativeDir,absoluteDir,subprefix){
 		var fnp = file.split('/');
 		var fn=fnp[fnp.length-1];
@@ -420,7 +430,7 @@
 			var nfile;
 			if(filereved){
 				psuedofilerev(_outfile);
-				nfile = p.split('/').slice(od.length,p.length).join('/') + "/" + path.basename(grunt.filerev[_outfile]);
+				nfile = p.split('/').slice(od.length,p.length).join('/') + "/" + path.basename(grunt.filerev.summary[path.normalize(_outfile)]);
 			}else{
 				nfile = p.split('/').slice(od.length,p.length).join('/') + "/" + path.basename(_outfile);
 			}
