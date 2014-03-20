@@ -2,7 +2,6 @@ module.exports={
   dev:{
     options:{
       development:true,
-      ssi:'test/www/hashes/js/qloader.js.incl',
       paths:{
       },
       shim:{
@@ -13,7 +12,6 @@ module.exports={
       inDir: 'test/src/js/',
       outDir: 'test/www/',
       relativeDir: 'test/src',
-      loader: 'test/www/js/qloader.js',
       subprefix : '_',
       global : "global",
       optimize : "none", //uglify or none
@@ -28,7 +26,6 @@ module.exports={
   dist:{
     options:{
       development:false,
-      ssi:'test/www/hashes/js/qloader.js.incl',
       paths:{
       },
       shim:{
@@ -37,7 +34,6 @@ module.exports={
       inDir: 'test/src/js/',
       outDir: 'test/www/',
       relativeDir: 'test/src',
-      loader: 'test/www/js/qloader.js',
       subprefix : '_',
       global : "global",
       optimize : "none", //uglify or none

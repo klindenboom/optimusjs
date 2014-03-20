@@ -1,0 +1,34 @@
+module.exports={
+	dev:{
+		options:{
+			useAlmond:false,
+			injectGlobalModule:false,
+			useFileRev:false,
+			basePath:'test/www/',
+			target:'js/qloader.js',
+			ssi:'hashes/js/qloader.js.incl',
+			disableLogging:false,
+			
+			paths:{
+				global:'test/www/js/global.js',
+				config:'requirepaths.out'
+			}
+		}
+	},
+	dist:{
+		options:{
+			useAlmond:true,
+			injectGlobalModule:true,
+			useFileRev:true,
+			basePath:'test/www/',
+			target:'js/qloader.js',
+			ssi:'hashes/js/qloader.js.incl',
+			disableLogging:true,
+			
+			paths:{
+				global:'test/www/js/global.js',
+				config:'requirepaths.out'
+			}
+		}
+	}
+};

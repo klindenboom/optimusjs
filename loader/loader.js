@@ -1,26 +1,15 @@
-{{requirejs}}
+{{REQUIRE_OR_ALMOND}}
 
 if(typeof(jQuery) === 'undefined'){
 {{jquery}}
 }
 
-{{optimusconfig}}
+{{config}}
 
-{{mainmodule}}
+{{MAIN_MODULE}}
 
-{{scriptloader}}
-
-// usage: log('inside coolFunc',this,arguments);
-// http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
-window.log = function(){
-    if({{debug}}){ // turn off log display in production
-        log.history = log.history || [];   // store logs to an array for reference
-        log.history.push(arguments);
-        if(this.console){
-            console.log( Array.prototype.slice.call(arguments) );
-        }
-    }
-};
+{{LOAD_SCRIPT}}
+{{logger}}
 // Rewrite of QLoader to incorporate script tag injection
 var QLoader={
     modules:[],
