@@ -28,7 +28,7 @@ _Run this task with the `grunt optimus` command._
 
 Task targets and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 ### Options
-
+_Defaults shown here_
 ```js
 {
 	global: 'global', // Global Module Name
@@ -86,6 +86,7 @@ _Run this task with the `grunt qloader` command._
 
 Task targets and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 ### Options
+_Defaults shown here_
 
 ```js
 {
