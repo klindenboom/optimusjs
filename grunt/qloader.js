@@ -11,7 +11,7 @@ module.exports={
 			
 			paths:{
 				global:'test/www/js/global.js',
-				config:'requirepaths.out'
+				config:'test/www/js/requirepaths.out'
 			}
 		}
 	},
@@ -27,7 +27,7 @@ module.exports={
 			
 			paths:{
 				global:'test/www/js/global.js',
-				config:'requirepaths.out'
+				config:'test/www/js/requirepaths.out'
 			}
 		}
 	}

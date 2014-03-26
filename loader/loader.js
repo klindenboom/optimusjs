@@ -29,9 +29,9 @@ var QLoader={
         while(i--){
             var stag=scripts[i];
             if(stag){
-                var modlist=stag.getAttribute('data-module-list');
-                
-                if(typeof(modlist)!=='undefined'){
+                var modlist=String(stag.getAttribute('data-module-list'));
+                // Scrub bad values
+                if(typeof(modlist)==='string' && modlist !=='null' && modlist !=='undefined' && modlist !== ''){
                     var mods=String(modlist).split(',');
                     this.modules=this.modules.concat(mods);
                 }
