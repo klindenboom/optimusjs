@@ -59,6 +59,28 @@ Task targets and options may be specified according to the grunt [Configuring ta
 }
 ```
 
+### Usage Examples
+
+```js
+module.exports={
+  dev:{
+    options:{
+      src: 'test/src',
+      dest: 'test/www',
+      config: 'test/src/config.json'
+    }
+  },
+  dist:{
+    options:{
+      src: 'test/src',
+      dest: 'test/www',
+      config: 'test/src/config.json'
+    }
+  }
+};
+```
+
+
 ## qloader task
 _Run this task with the `grunt qloader` command._
 
