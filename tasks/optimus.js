@@ -82,10 +82,31 @@ module.exports=function(grunt){
 		var i=0;
 		var cfg = grunt.config.get('optimus.'+this.target);
 		var rjsConfig = grunt.config.get('requirejs');
-
+		var rjsOptions = rjsConfig.options?rjsConfig.options:{};
 		if(!cfg.paths){
 			cfg.paths={};
 		}
+
+		// If a config file is specified, load it and merge it into the global options for rjs
+		if(!cfg.configLoaded && options.config){
+			if(typeof(options.config)==='string'){
+				var loadedConfig = grunt.file.readJSON(options.config);
+				rjsOptions = merge(rjsOptions,loadedConfig);
+			}else if(typeof(options.config)==='object'){
+				rjsOptions = merge(rjsOptions,options.config);
+			}
+			if(!rjsOptions.paths){
+				rjsOptions.paths={};
+			}
+			cfg.paths=merge(rjsOptions.paths,cfg.paths);
+			cfg.configLoaded = true;
+		}
+		// Apply any explicit overrides
+		if(typeof(options.requireOptions) === 'object'){
+			rjsOptions = merge(rjsOptions,options.requireOptions);
+		}
+
+
 		
 		var glob=[path.join(options.src,options.jsDir,'**/*.js')];
 		for(i=0;i<options.excludePaths.length;i++){
@@ -159,20 +180,7 @@ module.exports=function(grunt){
 
 		// If compile flag is set, generate RequireJS config
 		if(options.compile === true){
-			var rjsOptions = rjsConfig.options?rjsConfig.options:{};
-			// If a config file is specified, load it and merge it into the global options for rjs
-			if(!cfg.configLoaded && typeof(options.config)==='string'){
-				var loadedConfig = grunt.file.readJSON(options.config);
-				rjsOptions = merge(rjsOptions,loadedConfig);
-				cfg.configLoaded = true;
-			}else if(!cfg.configLoaded && typeof(options.config)==='object'){ // If specified as object, merge in
-				rjsOptions = merge(rjsOptions,options.config);
-				cfg.configLoaded = true;
-			}
-			// Apply any explicit overrides
-			if(typeof(options.requireOptions) === 'object'){
-				rjsOptions = merge(rjsOptions,options.requireOptions);
-			}
+			
 
 			rjsConfig.options=rjsOptions;
 			grunt.config.set('requirejs',rjsConfig);
