@@ -32,10 +32,12 @@ module.exports=function(grunt){
 		}
 		modulePath=path.join(path.dirname(modulePath),modname);
 		var isGlobal = path.normalize(modulePath) == path.normalize(options.global);
+
 		return {
 			path:relativePath,
 			id:modulePath,
-			isPartial:isPartial
+			isPartial:isPartial,
+			isGlobal:isGlobal
 		};
 	}
 
@@ -181,7 +183,7 @@ module.exports=function(grunt){
 
 		// If compile flag is set, generate RequireJS config
 		if(options.compile === true){
-			
+			grunt.log.writeln("Generating RequireJS configuration for all modules".green);			
 
 			rjsConfig.options=rjsOptions;
 			grunt.config.set('requirejs',rjsConfig);
