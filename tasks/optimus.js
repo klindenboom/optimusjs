@@ -82,7 +82,8 @@ module.exports=function(grunt){
 		var i=0;
 		var cfg = grunt.config.get('optimus.'+this.target);
 		var rjsConfig = grunt.config.get('requirejs');
-		var rjsOptions = rjsConfig.options?rjsConfig.options:{};
+		var rjsOptions = typeof(rjsConfig) !== 'undefined'?(rjsConfig.options?rjsConfig.options:{}):{};
+
 		if(!cfg.paths){
 			cfg.paths={};
 		}
@@ -234,7 +235,7 @@ module.exports=function(grunt){
 		}
 		// filerev
 		if(options.automaticRev){
-			nextSteps.push('filrev');
+			nextSteps.push('filerev');
 		}
 		// optimus-post
 		if(options.automaticPost){
@@ -282,7 +283,7 @@ module.exports=function(grunt){
 				var filepath = path.join(options.dest,paths[key]+'.js');
 				if(typeof(manifest[filepath])!== 'undefined'){
 					grunt.log.writeln(">>".yellow + path.basename(filepath) + " to ".yellow + path.basename(manifest[filepath]));
-					paths[key] = path.join(path.dirname(paths[jey]),path.basename(manifest[filepath],'.js'));
+					paths[key] = path.join(path.dirname(paths[key]),path.basename(manifest[filepath],'.js'));
 				}
 			}
 			grunt.log.writeln("--- done with filerev updates ----".grey);
