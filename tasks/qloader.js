@@ -77,12 +77,17 @@ module.exports=function(grunt){
 		var filecontent={};
 		var pathlist=Object.keys(paths);
 		pathlist.forEach(function(e,k,a){
+			var fpath = path.normalize(paths[e]);
+			if(grunt.filerev && grunt.filerev.summary && grunt.filerev.summary[fpath]){
+				grunt.log.writeln("filerev:".yellow,path.basename(fpath),':'.yellow,path.basename(grunt.filerev.summary[fpath]));
+				fpath = grunt.filerev.summary[fpath];
+			}
 			// Load each file content piece and store, if the path exists
-			if(fs.existsSync(path.normalize(paths[e]))){
-				filecontent[e]=String(fs.readFileSync(path.normalize(paths[e])));
+			if(fs.existsSync(fpath)){
+				filecontent[e]=String(fs.readFileSync(fpath));
 				grunt.log.writeln("- ".white + "read in ".blue + e + " @".blue + filecontent[e].length);
 			}else{
-				grunt.log.writeln("File not found for [".yellow + e + "]:".yellow+path.normalize(paths[e]));
+				grunt.log.writeln("File not found for [".yellow + e + "]:".yellow+fpath);
 			}
 		});
 
