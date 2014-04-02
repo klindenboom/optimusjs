@@ -86,6 +86,16 @@ module.exports=function(grunt){
 		var rjsConfig = grunt.config.get('requirejs');
 		var rjsOptions = typeof(rjsConfig) !== 'undefined'?(rjsConfig.options?rjsConfig.options:{}):{};
 
+		// Inject the excludes into partial and full excludes
+		for(i=0;i<options.excludes.length;i++){
+			if(options.excludesInPartials.indexOf(options.excludes[i])<0){
+				options.excludesInPartials.push(options.excludes[i]);
+			}
+			if(options.excludesInGlobal.indexOf(options.excludes[i])<0){
+				options.excludesInGlobal.push(options.excludes[i]);
+			}
+		}
+
 		if(!cfg.paths){
 			cfg.paths={};
 		}
