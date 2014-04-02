@@ -37,6 +37,17 @@ var QLoader={
                 }
             }
         }
+
+        // Sanitize module list
+        var i=this.modules.length;
+        log('QLoader','Sanitizing Module list');
+        while(i--){
+            if(typeof(this.modules[i])!=='string' || this.modules[i] === 'null' || this.modules[i] === 'undefined'){
+                log(" - Scrubbed out module:",i,this.modules[i]);
+                this.modules.splice(i,1); // drop non strings, (null etc)
+            }
+        }
+
         log("QLoader","getAllModules",this.modules);
     },
     preloadModules:function(){
