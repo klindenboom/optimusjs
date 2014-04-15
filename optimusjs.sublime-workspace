@@ -116,15 +116,6 @@
 			}
 		},
 		{
-			"file": "grunt/qloader.js",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix",
-				"name": "module.exports={"
-			}
-		},
-		{
 			"file": "tasks/qloader.js",
 			"settings":
 			{
@@ -201,6 +192,7 @@
 	},
 	"file_history":
 	[
+		"/Users/astrout/Development/optimusjs/grunt/qloader.js",
 		"/Users/astrout/Development/optimusjs/test/src/config.json",
 		"/Users/astrout/Development/optimusjs/optimus-old.js",
 		"/Users/astrout/Development/optimusjs/tasks/optimus.js",
@@ -327,8 +319,7 @@
 		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/README.txt",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/home.ftl",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/modules/RequestQuoteThanks.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/home.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/modules/Compare.ftl"
+		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/home.ftl"
 	],
 	"find":
 	{
@@ -559,8 +550,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								13562,
+								13562
 							]
 						],
 						"settings":
@@ -569,41 +560,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3156.0,
+						"translation.y": 1838.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "grunt/qloader.js",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "module.exports={",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "tasks/qloader.js",
 					"settings":
 					{
@@ -630,7 +593,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "package.json",
 					"settings":
 					{
@@ -658,7 +621,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "grunt/optimus.js",
 					"settings":
 					{
@@ -669,8 +632,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								630,
+								630
 							]
 						],
 						"settings":
@@ -686,7 +649,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "Gruntfile.js",
 					"settings":
 					{
@@ -712,7 +675,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "loader/loader.js",
 					"settings":
 					{
