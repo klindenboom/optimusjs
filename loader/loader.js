@@ -1,10 +1,12 @@
-{{REQUIRE_OR_ALMOND}}
+{{logger}}
 
-if(typeof(jQuery) === 'undefined'){
+{{REQUIRE_OR_ALMOND}}
+log("QLoader, jQuery:",window.jQuery);
+if(typeof(jQuery) === 'undefined' && typeof(window.jQuery) === 'undefined'){
 {{jquery}}
 }else{
     define('jquery',[],function(){
-        return jQuery;
+        return window.jQuery;
     });
 }
 
@@ -13,7 +15,6 @@ if(typeof(jQuery) === 'undefined'){
 {{MAIN_MODULE}}
 
 {{LOAD_SCRIPT}}
-{{logger}}
 // Rewrite of QLoader to incorporate script tag injection
 var QLoader={
     modules:[],
