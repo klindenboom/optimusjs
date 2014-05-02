@@ -2,6 +2,10 @@
 
 if(typeof(jQuery) === 'undefined'){
 {{jquery}}
+}else{
+    define('jquery',[],function(){
+        return jQuery;
+    });
 }
 
 {{config}}
