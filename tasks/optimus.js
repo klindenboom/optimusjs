@@ -14,6 +14,7 @@ var colors = require('colors');
 var prettyjson=require('prettyjson');
 var merge = require('merge');
 var mkpath = require('mkpath');
+var util = require('util');
 
 module.exports=function(grunt){
 	/**
@@ -77,7 +78,7 @@ module.exports=function(grunt){
 			grunt.config.set(['optimus',t],cfg);
 
 			// JSHint only this file
-			if(typeof(cfg.options.jshintID)!=='undefined'){
+			if(typeof(cfg.options.jshintID)!=='undefined' && typeof(cfg.options.integrateJSHint)!=='undefined' && cfg.options.integrateJSHint){
 				grunt.config(['jshint',cfg.options.jshintID],filepath);
 			}
 			grunt.log.writeln("OptimusJS: Watch Event fired for: "+target);
@@ -310,10 +311,17 @@ module.exports=function(grunt){
 			grunt.task.run(nextSteps);
 		}
 
-		if(typeof(options.watchID) !== 'undefined' && !cfg.watching){
+		// grunt-contrib-watch integration
+		if(typeof(options.watchID) !== 'undefined' && !cfg.watching && typeof(options.integrateWatch) !== 'undefined' && options.integrateWatch){
 			var wid=['watch',options.watchID+'-'+this.target];
-			var wtasks=options.watchTasks?options.watchTasks:[];
-			options.watchTasks.unshift('optimus:'+this.target);
+			var wtasks=options.watchTasks;
+			if(!util.isArray(wtasks))wtasks=[];
+
+			wtasks.unshift('optimus:'+this.target);
+			if(typeof(cfg.options.integrateJSHint)!=='undefined' && cfg.options.integrateJSHint){
+				wtasks.unshift('jshint:'+cfg.options.jshintID);
+			}
+			options.watchTasks=wtasks;
 			var watch=grunt.config.get(wid);
 			if(typeof(watch)!=='object')watch={};
 			watch.files=glob;
