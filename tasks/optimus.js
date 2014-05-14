@@ -60,6 +60,30 @@ module.exports=function(grunt){
 		}
 		return files;
 	}
+
+	/**
+	_onWatchEvent(action,filepath,target)
+	Callback for watch events, triggered when JS files are changed.
+	This allows optimus to watch and conditionally update files on change.
+	**/
+	var _onWatchEvent=function(action,filepath,target,wid){
+		// Only perform optimizations for optimus JS targets
+		if(target == wid[1]){
+			var t=wid[1].split('-');
+			t=t[t.length-1]; // TODO: assumes that there are no dashes in the name eg: ':dev' not ':op-dev'
+			var cfg=grunt.config.get(['optimus',t]);
+			cfg.watchcall=action;
+			cfg.watchtarget=filepath;
+			grunt.config.set(['optimus',t],cfg);
+
+			// JSHint only this file
+			if(typeof(cfg.options.jshintID)!=='undefined'){
+				grunt.config(['jshint',cfg.options.jshintID],filepath);
+			}
+			grunt.log.writeln("OptimusJS: Watch Event fired for: "+target);
+		}
+	};
+
 	/**
 	grunt-optimusjs - optimus task
 	Generates rjs configuration data dynamically based on convention.
@@ -76,6 +100,8 @@ module.exports=function(grunt){
 			config: false, // Path to RJS configuration JSON
 			integrateWatch: false, // Whether to integrate with watch task
 			watchID: 'optimusjs', // What ID to use if integrating with watch task
+			watchTasks: false, // Array of supplemental tasks to fire on change of file eg: ['qlaoder:dev']
+			watchReload: true, // Livereload after update
 			integrateJSHint: false, // Whether to integrate with JSHint watch task
 			jshintID: 'optimusjshint', // What ID to use if integrating with JSHint watch task
 			tasks: false, // Tasks to execute after requirejs but before optimus-post
@@ -94,7 +120,7 @@ module.exports=function(grunt){
 			absolutePaths:true // Whether paths should be relative or absolute
 		},this.options());
 		var i=0;
-		var cfg = grunt.config.get('optimus.'+this.target);
+		var cfg = grunt.config.get(['optimus',this.target]);
 		var rjsConfig = grunt.config.get('requirejs');
 		var rjsOptions = typeof(rjsConfig) !== 'undefined'?(rjsConfig.options?rjsConfig.options:{}):{};
 
@@ -241,12 +267,16 @@ module.exports=function(grunt){
 
 			// Update the requirejs configuration
 			grunt.config.set('requirejs',rjsConfig);
+			// Processing Complete
+			grunt.log.writeln("\nOptimusJS: RequireJS Configuration Generated".green);
+			grunt.log.writeln("configuration:\n".blue+prettyjson.render(rjsConfig));
+		}else{
+			// Processing Complete
+			grunt.log.writeln("\nOptimusJS: RequireJS Configuration Skipped".green);
+			grunt.log.writeln("paths:\n".blue+prettyjson.render(cfg.paths));
 		}
 
-		// Processing Complete
-		grunt.log.writeln("\nOptimusJS: RequireJS Configuration Generated".green);
-		grunt.log.writeln("configuration:\n".blue+prettyjson.render(rjsConfig));
-
+		
 		// Next Steps
 		var nextSteps=options.nextSteps.slice();
 		// jshint
@@ -280,10 +310,27 @@ module.exports=function(grunt){
 			grunt.task.run(nextSteps);
 		}
 
+		if(typeof(options.watchID) !== 'undefined' && !cfg.watching){
+			var wid=['watch',options.watchID+'-'+this.target];
+			var wtasks=options.watchTasks?options.watchTasks:[];
+			options.watchTasks.unshift('optimus:'+this.target);
+			var watch=grunt.config.get(wid);
+			if(typeof(watch)!=='object')watch={};
+			watch.files=glob;
+			watch.tasks=wtasks;
+			watch.options={spawn:false,debounceDelay:50,livereload:options.watchReload};
+			grunt.config.set(wid,watch);
+			grunt.event.on('watch',function(a,f,t){
+				_onWatchEvent(a,f,t,wid);
+			});
+			cfg.watching=true;
+			grunt.log.writeln("\nOptimusJS: Added watch task ["+wid+"]\n"+prettyjson.render(watch));
+		}
+
 		// Clear rebuild flag
 		cfg.watchcall=false;
-		grunt.config.set('optimus.'+this.target,cfg);
-		grunt.config.set('optimus-post.'+this.target,{options:options,cfg:cfg});
+		grunt.config.set(['optimus',this.target],cfg);
+		grunt.config.set(['optimus-post',this.target],{options:options,cfg:cfg});
 	});
 
 
