@@ -54,7 +54,7 @@ module.exports=function(grunt){
 			dep=deps[i];
 			if(files.indexOf(dep)<0){
 				files.push(dep);
-				meta = _getModuleData(dep,options);
+				meta = _getModuleMeta(dep,options);
 				files=_getFileDependencies(files,cfg.dependencies[meta.id],options,cfg);
 			}
 			i++;
