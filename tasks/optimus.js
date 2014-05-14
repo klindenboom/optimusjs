@@ -50,14 +50,16 @@ module.exports=function(grunt){
 	**/
 	function _getFileDependencies(files,deps,options,cfg){
 		var i=0,dep,meta;
-		while(i<deps.length){
-			dep=deps[i];
-			if(files.indexOf(dep)<0){
-				files.push(dep);
-				meta = _getModuleMeta(dep,options);
-				files=_getFileDependencies(files,cfg.dependencies[meta.id],options,cfg);
+		if(util.isArray(deps)){
+			while(i<deps.length){
+				dep=deps[i];
+				if(files.indexOf(dep)<0){
+					files.push(dep);
+					meta = _getModuleMeta(dep,options);
+					files=_getFileDependencies(files,cfg.dependencies[meta.id],options,cfg);
+				}
+				i++;
 			}
-			i++;
 		}
 		return files;
 	}
