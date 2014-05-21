@@ -111,7 +111,7 @@
 			"file": "tasks/optimus.js",
 			"settings":
 			{
-				"buffer_size": 14032,
+				"buffer_size": 14071,
 				"line_ending": "Unix"
 			}
 		},
@@ -544,7 +544,6 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
 				{
@@ -552,15 +551,15 @@
 					"file": "tasks/optimus.js",
 					"settings":
 					{
-						"buffer_size": 14032,
+						"buffer_size": 14071,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1776,
-								1776
+								1883,
+								1883
 							]
 						],
 						"settings":
@@ -569,7 +568,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 307.0,
+						"translation.y": 377.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
