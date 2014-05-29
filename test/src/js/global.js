@@ -1,5 +1,5 @@
-define(['shimmed'],function(Shimmed){
+define(['crazy/shimmed'],function(shim){
 	console.log("Loaded global module");
 	console.log("-------------");
-	console.log("Shimmed: "+Shimmed);
+	console.log("Shimmed: "+shim);
 });

@@ -1,8 +1,9 @@
 {
 	"paths":{
-		"shimmed":"js/crazy/_shimmed"
 	},
 	"shim":{
-		"shimmmed":"Shimmed"
+		"crazy/shimmed":{
+			"exports":"window.Shimmed"
+		}
 	}
 }

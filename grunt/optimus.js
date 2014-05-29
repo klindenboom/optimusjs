@@ -3,7 +3,10 @@ module.exports={
     options:{
       src: 'test/src',
       dest: 'test/www',
-      config: 'test/src/config.json'
+      config: 'test/src/config.json',
+      integrateWatch:true,
+      watchID:'optimusjs',
+      watchTasks:['qloader:dev']
     }
   },
   dist:{

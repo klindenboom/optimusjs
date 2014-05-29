@@ -125,6 +125,9 @@ module.exports=function(grunt){
 		var i=0;
 		var cfg = grunt.config.get(['optimus',this.target]);
 		var rjsConfig = grunt.config.get('requirejs');
+		if(!rjsConfig){
+			rjsConfig={};
+		}
 		var rjsOptions = typeof(rjsConfig) !== 'undefined'?(rjsConfig.options?rjsConfig.options:{}):{};
 
 		// Inject the excludes into partial and full excludes
@@ -142,24 +145,29 @@ module.exports=function(grunt){
 		}
 
 		// If a config file is specified, load it and merge it into the global options for rjs
-		if(!cfg.configLoaded && options.config){
+		if(!cfg.configLoaded){
 			if(typeof(options.config)==='string'){
 				var loadedConfig = grunt.file.readJSON(options.config);
 				rjsOptions = merge(rjsOptions,loadedConfig);
 			}else if(typeof(options.config)==='object'){
 				rjsOptions = merge(rjsOptions,options.config);
 			}
+
 			if(!rjsOptions.paths){
 				rjsOptions.paths={};
 			}
+
 			cfg.paths=merge(rjsOptions.paths,cfg.paths);
+			// Apply any explicit overrides
+			if(typeof(options.requireOptions) === 'object'){
+				rjsOptions = merge(rjsOptions,options.requireOptions);
+			}
+
+			rjsConfig.options = rjsOptions;
+			grunt.config.set('requirejs',rjsConfig);
 			cfg.configLoaded = true;
 		}
-		// Apply any explicit overrides
-		if(typeof(options.requireOptions) === 'object'){
-			rjsOptions = merge(rjsOptions,options.requireOptions);
-		}
-
+		
 
 		
 		var glob=[path.join(options.src,options.jsDir,'**/*.js')];
