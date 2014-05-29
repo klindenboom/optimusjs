@@ -111,23 +111,7 @@
 			"file": "tasks/optimus.js",
 			"settings":
 			{
-				"buffer_size": 14811,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tasks/qloader.js",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 810,
+				"buffer_size": 14908,
 				"line_ending": "Unix"
 			}
 		},
@@ -135,23 +119,7 @@
 			"file": "grunt/optimus.js",
 			"settings":
 			{
-				"buffer_size": 1199,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gruntfile.js",
-			"settings":
-			{
-				"buffer_size": 117,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "loader/loader.js",
-			"settings":
-			{
-				"buffer_size": 2825,
+				"buffer_size": 1222,
 				"line_ending": "Unix"
 			}
 		}
@@ -192,14 +160,20 @@
 	},
 	"file_history":
 	[
-		"/Users/astrout/Development/optimusjs/grunt/qloader.js",
-		"/Users/astrout/Development/optimusjs/test/src/config.json",
-		"/Users/astrout/Development/optimusjs/optimus-old.js",
 		"/Users/astrout/Development/optimusjs/tasks/optimus.js",
+		"/Users/astrout/Development/optimusjs/test/src/js/crazy/_shimmed.js",
+		"/Users/astrout/Development/optimusjs/grunt/qloader.js",
+		"/Users/astrout/Development/optimusjs/tasks/qloader.js",
+		"/Users/astrout/Development/optimusjs/package.json",
+		"/Users/astrout/Development/optimusjs/grunt/optimus.js",
+		"/Users/astrout/Development/optimusjs/Gruntfile.js",
 		"/Users/astrout/Development/optimusjs/loader/loader.js",
+		"/Users/astrout/Development/optimusjs/test/src/config.json",
+		"/Users/astrout/Development/optimusjs/test/src/js/global.js",
+		"/Users/astrout/Development/optimusjs/test/src/js/exclude/_shimmed.js",
+		"/Users/astrout/Development/optimusjs/optimus-old.js",
 		"/Users/astrout/Development/optimusjs/README.md",
 		"/Users/astrout/Development/optimusjs/test/www/js/requirepaths.out",
-		"/Users/astrout/Development/optimusjs/test/src/js/global.js",
 		"/Users/astrout/Development/optimusjs/test/www/index.html",
 		"/Users/astrout/Development/optimusjs/test/www/js/qloader.js",
 		"/Users/astrout/Development/optimusjs/.tmp/.ssiCache/test-src-index.html",
@@ -208,9 +182,6 @@
 		"/Users/astrout/Development/optimusjs/grunt/watch.js",
 		"/Users/astrout/Development/optimusjs/grunt/aliases.js",
 		"/Users/astrout/Development/optimusjs/loader/logger.js",
-		"/Users/astrout/Development/optimusjs/package.json",
-		"/Users/astrout/Development/optimusjs/tasks/qloader.js",
-		"/Users/astrout/Development/optimusjs/Gruntfile.js",
 		"/Users/astrout/Development/optimusjs/test/src/js/crazy/sub/folder/path/_submodule.js",
 		"/Users/astrout/Development/optimusjs/loader/scriptloader.min.js",
 		"/Users/astrout/Development/optimusjs/grunt/clean.js",
@@ -316,10 +287,7 @@
 		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/server.xml",
 		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/Mitsubishicars.properties",
 		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/robots.txt",
-		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/README.txt",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/home.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/modules/RequestQuoteThanks.ftl",
-		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/home.ftl"
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/README.txt"
 	],
 	"find":
 	{
@@ -365,7 +333,6 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"_getFile",
 			"basePath",
 			"grunt.config.",
 			"jshintID",
@@ -492,7 +459,8 @@
 			"_",
 			"pubsub",
 			"CODE REVIEW",
-			"			"
+			"			",
+			"mitsubishi"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -542,15 +510,15 @@
 					"file": "tasks/optimus.js",
 					"settings":
 					{
-						"buffer_size": 14811,
+						"buffer_size": 14908,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10189,
-								10189
+								13852,
+								13852
 							]
 						],
 						"settings":
@@ -559,80 +527,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3351.0,
+						"translation.y": 5069.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "tasks/qloader.js",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 732.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "package.json",
-					"settings":
-					{
-						"buffer_size": 810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								778,
-								804
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "grunt/optimus.js",
 					"settings":
 					{
-						"buffer_size": 1199,
+						"buffer_size": 1222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1153,
-								1153
+								419,
+								419
 							]
 						],
 						"settings":
@@ -643,60 +556,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Gruntfile.js",
-					"settings":
-					{
-						"buffer_size": 117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								117,
-								117
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "loader/loader.js",
-					"settings":
-					{
-						"buffer_size": 2825,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 140.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

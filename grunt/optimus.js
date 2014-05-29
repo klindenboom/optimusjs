@@ -15,6 +15,7 @@ module.exports={
       relativeDir: 'test/src',
       loader: 'test/www/js/qloader.js',
       subprefix : '_',
+      nojquery : true,
       global : "global",
       optimize : "none", //uglify or none
       config:{// for dynamic mode
