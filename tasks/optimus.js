@@ -27,6 +27,8 @@ module.exports=function(grunt){
 	// Dependency cache
 	var _dependencies = {};
 	var _outfile = '';
+	// Disable jquery
+	var _nojquery = false;
 	// Output folder
 	var _outdir = '';
 	// SSI file, for grunt-filerev integration
@@ -129,6 +131,7 @@ module.exports=function(grunt){
 		_outdir=outDir;
 		var ssi = options.ssi;
 		_ssifile= ssi;
+		_nojquery = options.nojquery === true;
 		var relativeDir = options.relativeDir;
 		var absoluteDir = options.inDir.split('/');
 		var subprefix = options.subprefix; // eg: '_'
@@ -414,7 +417,7 @@ module.exports=function(grunt){
 			var cf = fs.readFileSync(_configfile);
 			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
-			var jq = fs.readFileSync(_jqueryfile);
+			var jq = _nojquery?'':fs.readFileSync(_jqueryfile);
 			var sld = filereved?fs.readFileSync(_scriptloaderfile):'';
 			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
 			
