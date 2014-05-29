@@ -1,1 +1,8 @@
-{}
+{
+	"paths":{
+		"shimmed":"js/crazy/_shimmed"
+	},
+	"shim":{
+		"shimmmed":"Shimmed"
+	}
+}
