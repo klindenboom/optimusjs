@@ -111,6 +111,7 @@
 			"file": "tasks/optimus.js",
 			"settings":
 			{
+<<<<<<< HEAD
 				"buffer_size": 14153,
 				"line_ending": "Unix"
 			}
@@ -137,6 +138,9 @@
 			"settings":
 			{
 				"buffer_size": 810,
+=======
+				"buffer_size": 14908,
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 				"line_ending": "Unix"
 			}
 		},
@@ -144,6 +148,7 @@
 			"file": "grunt/optimus.js",
 			"settings":
 			{
+<<<<<<< HEAD
 				"buffer_size": 253,
 				"line_ending": "Unix"
 			}
@@ -161,6 +166,9 @@
 			"settings":
 			{
 				"buffer_size": 2652,
+=======
+				"buffer_size": 1222,
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 				"line_ending": "Unix"
 			}
 		}
@@ -201,12 +209,29 @@
 	},
 	"file_history":
 	[
+<<<<<<< HEAD
 		"/Users/astrout/Development/optimusjs/optimus-old.js",
 		"/Users/astrout/Development/optimusjs/tasks/optimus.js",
 		"/Users/astrout/Development/optimusjs/loader/loader.js",
 		"/Users/astrout/Development/optimusjs/README.md",
 		"/Users/astrout/Development/optimusjs/test/www/js/requirepaths.out",
 		"/Users/astrout/Development/optimusjs/test/src/js/global.js",
+=======
+		"/Users/astrout/Development/optimusjs/tasks/optimus.js",
+		"/Users/astrout/Development/optimusjs/test/src/js/crazy/_shimmed.js",
+		"/Users/astrout/Development/optimusjs/grunt/qloader.js",
+		"/Users/astrout/Development/optimusjs/tasks/qloader.js",
+		"/Users/astrout/Development/optimusjs/package.json",
+		"/Users/astrout/Development/optimusjs/grunt/optimus.js",
+		"/Users/astrout/Development/optimusjs/Gruntfile.js",
+		"/Users/astrout/Development/optimusjs/loader/loader.js",
+		"/Users/astrout/Development/optimusjs/test/src/config.json",
+		"/Users/astrout/Development/optimusjs/test/src/js/global.js",
+		"/Users/astrout/Development/optimusjs/test/src/js/exclude/_shimmed.js",
+		"/Users/astrout/Development/optimusjs/optimus-old.js",
+		"/Users/astrout/Development/optimusjs/README.md",
+		"/Users/astrout/Development/optimusjs/test/www/js/requirepaths.out",
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 		"/Users/astrout/Development/optimusjs/test/www/index.html",
 		"/Users/astrout/Development/optimusjs/test/www/js/qloader.js",
 		"/Users/astrout/Development/optimusjs/.tmp/.ssiCache/test-src-index.html",
@@ -215,9 +240,12 @@
 		"/Users/astrout/Development/optimusjs/grunt/watch.js",
 		"/Users/astrout/Development/optimusjs/grunt/aliases.js",
 		"/Users/astrout/Development/optimusjs/loader/logger.js",
+<<<<<<< HEAD
 		"/Users/astrout/Development/optimusjs/package.json",
 		"/Users/astrout/Development/optimusjs/tasks/qloader.js",
 		"/Users/astrout/Development/optimusjs/Gruntfile.js",
+=======
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 		"/Users/astrout/Development/optimusjs/test/src/js/crazy/sub/folder/path/_submodule.js",
 		"/Users/astrout/Development/optimusjs/loader/scriptloader.min.js",
 		"/Users/astrout/Development/optimusjs/grunt/clean.js",
@@ -323,12 +351,16 @@
 		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/server.xml",
 		"/usr/local/mitsubishi/trunk/mitsubishi-redesign/branches/dev2/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/Mitsubishicars.properties",
 		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/robots.txt",
+<<<<<<< HEAD
 		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/README.txt",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/home.ftl",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/request-quote-thanks/modules/RequestQuoteThanks.ftl",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/home.ftl",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/app/compare/modules/Compare.ftl",
 		"/usr/local/mitsubishi/devenv/MitsubishiCarsUI/src/js/inventory/inventory.js"
+=======
+		"/usr/local/mitsubishi/devenv/MitsubishiCars/MitsubishiCars-war/src/main/resources/env/osxlocal/README.txt"
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 	],
 	"find":
 	{
@@ -544,12 +576,16 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 0,
+=======
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "tasks/optimus.js",
+<<<<<<< HEAD
 					"settings":
 					{
 						"buffer_size": 14153,
@@ -663,14 +699,24 @@
 					"settings":
 					{
 						"buffer_size": 253,
+=======
+					"settings":
+					{
+						"buffer_size": 14908,
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								253,
 								253
+=======
+								13852,
+								13852
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 							]
 						],
 						"settings":
@@ -680,12 +726,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5069.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
+<<<<<<< HEAD
 					"buffer": 5,
 					"file": "Gruntfile.js",
 					"settings":
@@ -717,14 +764,26 @@
 					"settings":
 					{
 						"buffer_size": 2652,
+=======
+					"buffer": 1,
+					"file": "grunt/optimus.js",
+					"settings":
+					{
+						"buffer_size": 1222,
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								255,
 								255
+=======
+								419,
+								419
+>>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 							]
 						],
 						"settings":

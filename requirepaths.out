@@ -5,8 +5,8 @@ var req_config={
     "waitSeconds": 15,
     "paths": {
         "crazy/sub/folder/path/submodule": "js/crazy/sub/folder/path/_submodule",
-        "global": "js/global.429f66f1",
-        "page/page": "js/page/page.b72105da"
+        "global": "js/global",
+        "page/page": "js/page/page"
     }
 };
 require.config(req_config);
