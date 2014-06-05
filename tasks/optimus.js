@@ -15,6 +15,18 @@ var prettyjson=require('prettyjson');
 var merge = require('merge');
 var mkpath = require('mkpath');
 var util = require('util');
+var fixpath = function(p){ // removes platform specific (windows) path separators
+	if(path.sep=='\\'){
+		return p.replace(path.sep,'/');
+	}
+	return p;
+}
+
+// Slightly Hackish >_<
+var pathjoin=path.join;
+path.join=function(){
+	return fixpath(pathjoin.apply(path,arguments));
+}
 
 module.exports=function(grunt){
 	/**
@@ -27,6 +39,7 @@ module.exports=function(grunt){
 		var modulePath = path.relative(path.join(options.src,options.jsDir),filepath);
 		var isPartial = path.basename(filepath).substr(0,options.partialPrefix.length) === options.partialPrefix;
 		relativePath = path.join(path.dirname(relativePath),path.basename(relativePath,'.js'));
+
 		var modname= path.basename(modulePath,'.js');
 		if(isPartial){
 			modname=modname.substr(options.partialPrefix.length);
