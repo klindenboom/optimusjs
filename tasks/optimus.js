@@ -24,7 +24,6 @@ var fixpath = function(p){ // removes platform specific (windows) path separator
 
 
 module.exports=function(grunt){
-<<<<<<< HEAD
 	/**
 	_getModuleMeta(filepath)
 	@param string filepath The path to an AMD module file.
@@ -39,47 +38,6 @@ module.exports=function(grunt){
 		var modname= path.basename(modulePath,'.js');
 		if(isPartial){
 			modname=modname.substr(options.partialPrefix.length);
-=======
-	// The path to the global module
-	var _globalmod = '';
-	// Configuration storage file
-	var _configfile = '';
-	// Configuration (paths cache)
-	var _configdata = {};
-	// Dependency cache
-	var _dependencies = {};
-	var _outfile = '';
-	// Disable jquery
-	var _nojquery = false;
-	// Output folder
-	var _outdir = '';
-	// SSI file, for grunt-filerev integration
-	var _ssifile = '';
-	// Watch integration
-	var _watchhooked = false;
-	var _watchtask = '';
-	var _watchtarget = '';
-	// JSHint integration
-	var _jshinttask = '';
-	// Third party libraries for injection into loader
-	var _rjsfile = path.normalize(__dirname + "/../loader/require.js");
-	var _almondfile = path.normalize(__dirname + "/../loader/almond.js");
-	var _loaderfile = path.normalize(__dirname + "/../loader/loader.js");
-	var _jqueryfile = path.normalize(__dirname + "/../loader/jquery.min.js");
-	var _scriptloaderfile = path.normalize(__dirname + "/../loader/scriptloader.min.js");
-
-	// Acquires the module ID and relative path as an array of two elements
-	var getModuleIDFromPath=function(file,relativeDir,absoluteDir,subprefix){
-		var fnp = file.split('/');
-		var fn=fnp[fnp.length-1];
-		var rel = relativeDir.split('/');
-		var abs = absoluteDir.split('/');
-		if(rel[rel.length-1]==''){
-			rel.pop();
-		}
-		if(abs[abs.length-1]==''){
-			abs.pop();
->>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 		}
 		modulePath=path.join(path.dirname(modulePath),modname);
 		var isGlobal = path.normalize(modulePath) == path.normalize(options.global);
@@ -141,7 +99,6 @@ module.exports=function(grunt){
 	grunt-optimusjs - optimus task
 	Generates rjs configuration data dynamically based on convention.
 	**/
-<<<<<<< HEAD
 	grunt.registerMultiTask('optimus','Build r.js configurations, convention over configuration approach',function(){
 		var options = merge({
 			global: 'global', // Global Module Name
@@ -178,43 +135,6 @@ module.exports=function(grunt){
 		var rjsConfig = grunt.config.get('requirejs');
 		if(!rjsConfig){
 			rjsConfig={};
-=======
-	grunt.registerMultiTask('optimus','Build a configuration for the R.JS optimizer from JS folder structure',function(){
-		var options = this.options();
-		var global = _globalmod=options.global;
-		var inDir = options.inDir; // eg: 'src/js/'
-		var outDir = options.outDir; // eg: 'static/js/'
-		_outdir=outDir;
-		var ssi = options.ssi;
-		_ssifile= ssi;
-		_nojquery = options.nojquery === true;
-		var relativeDir = options.relativeDir;
-		var absoluteDir = options.inDir.split('/');
-		var subprefix = options.subprefix; // eg: '_'
-		var configfile = options.configfile; // eg: 'requirepaths.out'
-		var excludeforsub = typeof(options.excludeforsub)!=='undefined'?options.excludeforsub:[];
-		var excludeforglobal = typeof(options.excludeforglobal)!=='undefined'?options.excludeforglobal:[];
-		var exclude = options.exclude;
-		var optimize = options.optimize; //uglify or none
-		var files;
-		var rj = grunt.config.get('requirejs');
-		var watch = grunt.config.get('watch');
-		var jshint = grunt.config.get('jshint');
-		var filesglob=[''+inDir+"**/*.js"];
-
-
-
-		if(!exclude){
-			files=grunt.file.expand(''+inDir+"**/*.js");
-		}else{
-			if(!Array.isArray(exclude)){
-				exclude=[exclude];
-			}
-			for(var i=0;i<exclude.length;i++){
-				filesglob.push('!'+inDir+exclude[i]);
-			}
-			files=grunt.file.expand(filesglob);
->>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 		}
 		var rjsOptions = typeof(rjsConfig) !== 'undefined'?(rjsConfig.options?rjsConfig.options:{}):{};
 
@@ -467,39 +387,11 @@ module.exports=function(grunt){
 			grunt.log.writeln("--- done with filerev updates ----".grey);
 		}
 
-<<<<<<< HEAD
 		
 		if(options.absolutePaths){
 			for(key in paths){
 				// make the path absolute
 				paths[key] = '/'+paths[key];
-=======
-		if(_configfile && _outfile){
-			var cf = fs.readFileSync(_configfile);
-			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
-			var gf = fs.readFileSync(_loaderfile);
-			var jq = _nojquery?'':fs.readFileSync(_jqueryfile);
-			var sld = filereved?fs.readFileSync(_scriptloaderfile):'';
-			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
-			
-			var p=_outfile.split('/');
-			p.pop();
-			p=p.join('/');
-			grunt.log.writeln("Path:".blue+p);
-			mkpath.sync(p);
-			fs.writeFileSync(_outfile,String(gf).replace('{{optimusconfig}}',cf).replace('{{requirejs}}',rjf).replace('{{jquery}}',jq).replace('{{mainmodule}}',gm).replace('{{scriptloader}}',sld).replace('{{debug}}',''+(!filereved)));
-
-			var od = _outdir.split('/');
-			if(od[od.length-1] === ''){
-				od.pop();
-			}
-			var nfile;
-			if(filereved){
-				psuedofilerev(_outfile);
-				nfile = p.split('/').slice(od.length,p.length).join('/') + "/" + path.basename(grunt.filerev.summary[path.normalize(_outfile)]);
-			}else{
-				nfile = p.split('/').slice(od.length,p.length).join('/') + "/" + path.basename(_outfile);
->>>>>>> 5a381e9e4a83efab2892d419b4ae0d3fb85523b9
 			}
 		}
 
