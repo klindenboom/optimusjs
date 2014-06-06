@@ -17,7 +17,7 @@ var mkpath = require('mkpath');
 var util = require('util');
 var fixpath = function(p){ // removes platform specific (windows) path separators
 	if(path.sep=='\\'){
-		return p.replace(path.sep,'/');
+		return p.replace(/\\/g,'/');
 	}
 	return p;
 }
