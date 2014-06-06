@@ -22,11 +22,6 @@ var fixpath = function(p){ // removes platform specific (windows) path separator
 	return p;
 }
 
-// Slightly Hackish >_<
-var pathjoin=path.join;
-path.join=function(){
-	return fixpath(pathjoin.apply(path,arguments));
-}
 
 module.exports=function(grunt){
 <<<<<<< HEAD
@@ -90,8 +85,8 @@ module.exports=function(grunt){
 		var isGlobal = path.normalize(modulePath) == path.normalize(options.global);
 
 		return {
-			path:relativePath,
-			id:modulePath,
+			path:fixpath(relativePath),
+			id:fixpath(modulePath),
 			isPartial:isPartial,
 			isGlobal:isGlobal
 		};
