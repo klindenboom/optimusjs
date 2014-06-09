@@ -391,7 +391,9 @@ module.exports=function(grunt){
 		if(options.absolutePaths){
 			for(key in paths){
 				// make the path absolute
-				paths[key] = '/'+paths[key];
+				if(String(paths[key]).substr(0,1) !== '/'){
+					paths[key] = '/'+paths[key];
+				}
 			}
 		}
 
