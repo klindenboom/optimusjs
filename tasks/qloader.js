@@ -78,7 +78,7 @@ module.exports=function(grunt){
 		var pathlist=Object.keys(paths);
 		pathlist.forEach(function(e,k,a){
 			var fpath = path.normalize(paths[e]);
-			if(grunt.filerev && grunt.filerev.summary && grunt.filerev.summary[fpath]){
+			if(typeof(grunt.filerev)!=="undefined" && typeof(grunt.filerev.summary) !=="undefined" && typeof(grunt.filerev.summary[fpath])!=="undefined"){
 				grunt.log.writeln("filerev:".yellow,path.basename(fpath),':'.yellow,path.basename(grunt.filerev.summary[fpath]));
 				fpath = grunt.filerev.summary[fpath];
 			}
