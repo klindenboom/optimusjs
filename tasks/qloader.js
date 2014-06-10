@@ -144,7 +144,10 @@ module.exports=function(grunt){
 		// Optionally rev the resulting file
 		if(options.useFileRev){
 			grunt.log.writeln("Rev QLoader output file:".green);
-			file=psuedofilerev(file);
+			
+			if(typeof(grunt.filerev) !== "undefined" && typeof(grunt.filerev.summary) !== "undefined"){
+				file=psuedofilerev(file);
+			}
 			grunt.log.writeln("- ".white + " new filename = ".blue + file);
 		}
 		// Optionally store the resulting path in an SSI include
