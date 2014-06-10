@@ -21,28 +21,32 @@ module.exports=function(grunt){
 
 	// FileRev qloader.js so we can generate the SSI properly
 	var psuedofilerev=function(file){
-		var filerev=grunt.filerev;
-		var options=merge({
-			encoding: 'utf8',
-			algorithm: 'md5',
-			length: 8
-		},grunt.config.get('filerev.options'));
+		if(typeof(grunt.filerev) !=="undefined" && typeof(grunt.filerev.summary) !== "undefined"){
+			var filerev=grunt.filerev;
+			var options=merge({
+				encoding: 'utf8',
+				algorithm: 'md5',
+				length: 8
+			},grunt.config.get('filerev.options'));
 
-		var dirname;
-        var hash = crypto.createHash(options.algorithm).update(grunt.file.read(file), options.encoding).digest('hex');
-        var suffix = hash.slice(0, options.length);
-        var ext = path.extname(file);
-        var newName = [path.basename(file, ext), suffix, ext.slice(1)].join('.');
-        var resultPath;
+			var dirname;
+	        var hash = crypto.createHash(options.algorithm).update(grunt.file.read(file), options.encoding).digest('hex');
+	        var suffix = hash.slice(0, options.length);
+	        var ext = path.extname(file);
+	        var newName = [path.basename(file, ext), suffix, ext.slice(1)].join('.');
+	        var resultPath;
 
-		dirname = path.dirname(file);
-		resultPath = path.resolve(dirname, newName);
-		fs.renameSync(file, resultPath);
+			dirname = path.dirname(file);
+			resultPath = path.resolve(dirname, newName);
+			fs.renameSync(file, resultPath);
 
-        filerev.summary[path.normalize(file)] = path.join(dirname, newName);
-        grunt.log.writeln('✔ ' + file + ' changed to ' + newName);
-        grunt.filerev=filerev;
-        return path.join(dirname,newName);
+	        filerev.summary[path.normalize(file)] = path.join(dirname, newName);
+	        grunt.log.writeln('✔ ' + file + ' changed to ' + newName);
+	        grunt.filerev=filerev;
+	        return path.join(dirname,newName);
+    	}else{
+    		return file;
+    	}
 	};
 
 	/**
@@ -112,13 +116,19 @@ module.exports=function(grunt){
 					// Special tag for the main module
 					if(options.injectGlobalModule){
 						// If grunt-filerev replaced the global module, grab the new path from the summary
-						if(typeof(grunt.filerev.summary)!=='undefined' && options.useFileRev && typeof(grunt.filerev.summary[path.normalize(paths.global)])!=='undefined'){
+						if(
+							typeof(grunt.filerev) !== 'undefined' &&
+							typeof(grunt.filerev.summary)!=='undefined' &&
+							options.useFileRev && 
+							typeof(grunt.filerev.summary[path.normalize(paths.global)])!=='undefined'
+						){
 							filecontent.global = fs.readFileSync(grunt.filerev.summary[path.normalize(paths.global)]);
 						}
 						return filecontent.global;
 					}else{ // Not injecting the module
 						return "/** No global module injection **/";
 					}
+					grunt.log.writeln("Main module injected");
 				break;
 				case 'LOAD_SCRIPT':
 					if(options.useAlmond){
@@ -136,7 +146,10 @@ module.exports=function(grunt){
 					}
 				break;
 			}
+			grunt.log.writeln("replaced".blue);
 		});
+
+		
 		
 		var file = path.join(options.basePath,options.target);
 		mkpath.sync(path.dirname(file));
