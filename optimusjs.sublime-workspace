@@ -114,6 +114,14 @@
 				"buffer_size": 14487,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "tasks/qloader.js",
+			"settings":
+			{
+				"buffer_size": 5950,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "Packages/JSHint/JSHint.sublime-build",
@@ -325,6 +333,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"summary",
+			"psuedofilerev",
+			"filerev",
+			".summary",
 			"rjsOptions",
 			"rjsOptions.paths",
 			"cfg.paths",
@@ -448,11 +460,7 @@
 			"vehicle.model",
 			"dearler",
 			"macro allPhotos",
-			"allPhotos",
-			"vehicle.",
-			"shell",
-			"2014",
-			"vehicleContent"
+			"allPhotos"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -495,7 +503,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -510,8 +518,8 @@
 						"selection":
 						[
 							[
-								14125,
-								14125
+								13440,
+								13447
 							]
 						],
 						"settings":
@@ -520,7 +528,34 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4276.0,
+						"translation.y": 4302.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tasks/qloader.js",
+					"settings":
+					{
+						"buffer_size": 5950,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4863,
+								4863
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1161.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
