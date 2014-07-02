@@ -6,6 +6,17 @@ if({{debug}}){
             console.log( Array.prototype.slice.call(arguments) );
         }
     };
+    if(typeof(console) === 'undefined'){
+    	var console={
+	        log : function(){},
+	        warn : function(){},
+	        error : function(){},
+	        dir : function(){},
+	        trace : function(){},
+	        time : function(){},
+	        timeEnd : function(){}
+	    };
+    }
 }else{
     var console = {
         log : function(){},
