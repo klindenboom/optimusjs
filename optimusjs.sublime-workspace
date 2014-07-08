@@ -122,6 +122,14 @@
 				"buffer_size": 5950,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "loader/logger.js",
+			"settings":
+			{
+				"buffer_size": 824,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "Packages/JSHint/JSHint.sublime-build",
@@ -503,7 +511,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -545,8 +553,8 @@
 						"selection":
 						[
 							[
-								4863,
-								4863
+								4271,
+								4271
 							]
 						],
 						"settings":
@@ -555,7 +563,35 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1161.0,
+						"translation.y": 86.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "loader/logger.js",
+					"settings":
+					{
+						"buffer_size": 824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								608,
+								608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

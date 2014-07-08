@@ -164,8 +164,12 @@ module.exports=function(grunt){
 			if(!rjsOptions.paths){
 				rjsOptions.paths={};
 			}
+			if(!rjsOptions.shim){
+				rjsOptions.shim={};
+			}
 
 			cfg.paths=merge(rjsOptions.paths,cfg.paths);
+			cfg.shim=merge(rjsOptions.shim,cfg.shim);
 			// Apply any explicit overrides
 			if(typeof(options.requireOptions) === 'object'){
 				rjsOptions = merge(rjsOptions,options.requireOptions);
@@ -265,6 +269,7 @@ module.exports=function(grunt){
 						options:{
 							baseUrl:'./'+options.src,
 							paths:cfg.paths,
+							shim:cfg.shim,
 							name:mod.id,
 							out:path.join(options.dest,mod.path+'.js'),
 							optimize:options.optimize,
