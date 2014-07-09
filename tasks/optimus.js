@@ -1,6 +1,6 @@
 /*
  * grunt-optimus
- * 
+ *
  *
  * Copyright (c) 2013 Arne Strout, contributors
  * Licensed under the MIT license.
@@ -29,6 +29,8 @@ module.exports=function(grunt){
 	var _outfile = '';
 	// Disable jquery
 	var _nojquery = false;
+	// Disable require
+	var _norequirejs = false;
 	// Output folder
 	var _outdir = '';
 	// SSI file, for grunt-filerev integration
@@ -132,6 +134,7 @@ module.exports=function(grunt){
 		var ssi = options.ssi;
 		_ssifile= ssi;
 		_nojquery = options.nojquery === true;
+		_norequirejs = options.norequirejs === true;
 		var relativeDir = options.relativeDir;
 		var absoluteDir = options.inDir.split('/');
 		var subprefix = options.subprefix; // eg: '_'
@@ -196,7 +199,7 @@ module.exports=function(grunt){
 				}
 			}
 		}
-		
+
 		if(typeof(options.jquery) !== 'undefined'){
 			_jqueryfile=options.jquery;
 		}
@@ -213,7 +216,7 @@ module.exports=function(grunt){
 		}else{
 			options.paths=options.paths!==undefined?merge(options.paths,rj.options.paths):rj.options.paths;
 		}
-		
+
 		var paths = options.paths!==undefined ? options.paths:{};
 		var storage=grunt.config('require-storage');
 		if(!storage){
@@ -222,7 +225,7 @@ module.exports=function(grunt){
 				dependencies:_dependencies
 			});
 		}
-		
+
 		paths=grunt.config('require-storage.paths');
 		_dependencies=grunt.config('require-storage.dependencies');
 		if(!_dependencies){
@@ -243,7 +246,7 @@ module.exports=function(grunt){
 
 		grunt.log.writeln("OPTIMUS : Preparing Javascript Configuration"+(watchcall?" WC["+watchcall+"]/"+watchtarget:"."));
 		grunt.log.writeln("-----------------------------");
-		
+
 		// If a file was added, or this is the only call, build paths from scratch
 		if(watchcall!=="changed"){
 			//console.log("Starting paths:\n %j",paths);
@@ -323,9 +326,9 @@ module.exports=function(grunt){
 				var fn=fnp[fnp.length-1];
 				if(fn.substr(0,subprefix.length) !== subprefix){
 					var fileid=getModuleIDFromPath(file,relativeDir,absoluteDir,subprefix);
-					
+
 					grunt.log.write(' >>'.yellow+(fileid[0]).green);
-					
+
 					var o={
 						options:{
 							baseUrl:'./'+relativeDir,
@@ -342,7 +345,7 @@ module.exports=function(grunt){
 						o.options.exclude=excludeforglobal;
 						grunt.log.writeln((fileid[0]+" is the root/global module").grey);
 					}
-					
+
 					rj[fileid[0]]=o;
 				}
 			});
@@ -361,7 +364,7 @@ module.exports=function(grunt){
 		grunt.log.writeln("\nOPTIMUS: Prepare complete".green);
 		grunt.log.writeln("------------------------");
 		grunt.log.writeln("RJ:"+prettyjson.render(rj));
-		
+
 		if(!options.development){
 			grunt.task.run("requirejs","filerev","optimus-post:"+this.target);
 		}else{
@@ -415,12 +418,20 @@ module.exports=function(grunt){
 
 		if(_configfile && _outfile){
 			var cf = fs.readFileSync(_configfile);
-			var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
+			//
+			var rjf;
+			if (_norequirejs) {
+				rjf='';
+			}
+			else {
+				rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
+			}
+			//var rjf = fs.readFileSync(filereved?_almondfile:_rjsfile);
 			var gf = fs.readFileSync(_loaderfile);
 			var jq = _nojquery?'':fs.readFileSync(_jqueryfile);
 			var sld = filereved?fs.readFileSync(_scriptloaderfile):'';
 			var gm = filereved?fs.readFileSync(_outdir+_configdata.paths[_globalmod]+'.js'):'';
-			
+
 			var p=_outfile.split('/');
 			p.pop();
 			p=p.join('/');
